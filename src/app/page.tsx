@@ -443,7 +443,6 @@ export default function Home() {
             </div>
             {/* Boardroom */}
             <div className="glass-card rounded-2xl p-8 group hover:border-[#FF4500]/50 transition-all duration-500 flex flex-col justify-between relative overflow-hidden" style={{ height: "clamp(320px, 50vw, 500px)" }}>
-              <Image src="/boardroom-tutor.png" alt="Tutor DFN Boardroom" width={859} height={1253} className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[55%] w-auto z-[1]" />
               <div className="relative z-20" style={{ textShadow: "0 2px 12px rgba(0,0,0,1), 0 0 30px rgba(0,0,0,0.9), 0 4px 24px rgba(0,0,0,0.8)" }}>
                 <h3 className="font-bold text-2xl mb-2" style={{ fontFamily: "var(--font-headline)", lineHeight: "1.5" }}>Boardroom</h3>
                 <p className="text-white/70 font-medium" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>Inglês executivo para reuniões, projetos e networking profissional global.</p>
