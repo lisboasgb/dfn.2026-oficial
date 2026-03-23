@@ -420,39 +420,36 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Street Talk */}
-            <div className="glass-card rounded-2xl p-8 group hover:border-[#FF4500]/50 transition-all duration-500 flex flex-col justify-end relative overflow-hidden" style={{ height: "clamp(320px, 50vw, 500px)" }}>
-              <Image src="/streettalk-tutor.png" alt="Tutor DFN Street Talk" width={1028} height={1056} className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[85%] w-auto z-[1]" />
-              <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/90 via-black/50 to-transparent pointer-events-none" />
+            <div className="glass-card rounded-2xl p-8 group hover:border-[#FF4500]/50 transition-all duration-500 flex flex-col justify-between relative overflow-hidden" style={{ height: "clamp(320px, 50vw, 500px)" }}>
+              <Image src="/streettalk-tutor.png" alt="Tutor DFN Street Talk" width={1028} height={1056} className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[55%] w-auto z-[1]" />
               <div className="relative z-20" style={{ textShadow: "0 2px 12px rgba(0,0,0,1), 0 0 30px rgba(0,0,0,0.9), 0 4px 24px rgba(0,0,0,0.8)" }}>
-                <div className="mb-4 text-[#FF4500]" style={{ filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.8))" }}>
-                  <MessageCircle size={36} />
-                </div>
                 <h3 className="font-bold text-2xl mb-2" style={{ fontFamily: "var(--font-headline)", lineHeight: "1.5" }}>Street Talk</h3>
                 <p className="text-white/70 font-medium" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>Gírias, expressões e o ritmo real das conversas cotidianas nas nações.</p>
               </div>
+              <div className="relative z-20 mt-auto text-[#FF4500]" style={{ filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.8))" }}>
+                <MessageCircle size={36} />
+              </div>
             </div>
             {/* Devotional */}
-            <div className="glass-card rounded-2xl p-8 group hover:border-[#FF4500]/50 transition-all duration-500 flex flex-col justify-end relative overflow-hidden" style={{ height: "clamp(320px, 50vw, 500px)" }}>
-              <Image src="/devotional-tutor.png" alt="Tutor DFN Devotional" width={630} height={900} className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[85%] w-auto z-[1]" />
-              <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/90 via-black/50 to-transparent pointer-events-none" />
+            <div className="glass-card rounded-2xl p-8 group hover:border-[#FF4500]/50 transition-all duration-500 flex flex-col justify-between relative overflow-hidden" style={{ height: "clamp(320px, 50vw, 500px)" }}>
+              <Image src="/devotional-tutor.png" alt="Tutor DFN Devotional" width={630} height={900} className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[55%] w-auto z-[1]" />
               <div className="relative z-20" style={{ textShadow: "0 2px 12px rgba(0,0,0,1), 0 0 30px rgba(0,0,0,0.9), 0 4px 24px rgba(0,0,0,0.8)" }}>
-                <div className="mb-4 text-[#FF4500]" style={{ filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.8))" }}>
-                  <BookOpen size={36} />
-                </div>
                 <h3 className="font-bold text-2xl mb-2" style={{ fontFamily: "var(--font-headline)", lineHeight: "1.5" }}>Devotional</h3>
                 <p className="text-white/70 font-medium" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>Vocabulário bíblico e teológico para pregar e orar com autoridade espiritual.</p>
               </div>
+              <div className="relative z-20 mt-auto text-[#FF4500]" style={{ filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.8))" }}>
+                <BookOpen size={36} />
+              </div>
             </div>
             {/* Boardroom */}
-            <div className="glass-card rounded-2xl p-8 group hover:border-[#FF4500]/50 transition-all duration-500 flex flex-col justify-end relative overflow-hidden" style={{ height: "clamp(320px, 50vw, 500px)" }}>
-              <Image src="/boardroom-tutor.png" alt="Tutor DFN Boardroom" width={859} height={1253} className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[85%] w-auto z-[1]" />
-              <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/90 via-black/50 to-transparent pointer-events-none" />
+            <div className="glass-card rounded-2xl p-8 group hover:border-[#FF4500]/50 transition-all duration-500 flex flex-col justify-between relative overflow-hidden" style={{ height: "clamp(320px, 50vw, 500px)" }}>
+              <Image src="/boardroom-tutor.png" alt="Tutor DFN Boardroom" width={859} height={1253} className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[55%] w-auto z-[1]" />
               <div className="relative z-20" style={{ textShadow: "0 2px 12px rgba(0,0,0,1), 0 0 30px rgba(0,0,0,0.9), 0 4px 24px rgba(0,0,0,0.8)" }}>
-                <div className="mb-4 text-[#FF4500]" style={{ filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.8))" }}>
-                  <Briefcase size={36} />
-                </div>
                 <h3 className="font-bold text-2xl mb-2" style={{ fontFamily: "var(--font-headline)", lineHeight: "1.5" }}>Boardroom</h3>
                 <p className="text-white/70 font-medium" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>Inglês executivo para reuniões, projetos e networking profissional global.</p>
+              </div>
+              <div className="relative z-20 mt-auto text-[#FF4500]" style={{ filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.8))" }}>
+                <Briefcase size={36} />
               </div>
             </div>
           </div>
