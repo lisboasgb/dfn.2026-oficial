@@ -422,8 +422,8 @@ export default function Home() {
             {/* Street Talk */}
             <div className="glass-card rounded-2xl p-8 group hover:border-[#FF4500]/50 transition-all duration-500 flex flex-col justify-end relative overflow-hidden" style={{ height: "clamp(320px, 50vw, 500px)" }}>
               <div className="absolute top-0 left-0 w-full h-full opacity-40 group-hover:opacity-60 transition-opacity bg-gradient-to-t from-black/80 to-transparent" />
-              <div className="relative z-10">
-                <div className="mb-4 text-[#FF4500]">
+              <div className="relative z-10" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.7)" }}>
+                <div className="mb-4 text-[#FF4500]" style={{ filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.8))" }}>
                   <MessageCircle size={36} />
                 </div>
                 <h3 className="font-bold text-2xl mb-2" style={{ fontFamily: "var(--font-headline)", lineHeight: "1.5" }}>Street Talk</h3>
@@ -434,8 +434,8 @@ export default function Home() {
             <div className="glass-card rounded-2xl p-8 group hover:border-[#FF4500]/50 transition-all duration-500 flex flex-col justify-end relative overflow-hidden" style={{ height: "clamp(320px, 50vw, 500px)" }}>
               <Image src="/devotional-tutor.png" alt="Tutor DFN Devotional" width={630} height={900} className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[85%] h-auto z-[1]" />
               <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/90 via-black/50 to-transparent pointer-events-none" />
-              <div className="relative z-10">
-                <div className="mb-4 text-[#FF4500]">
+              <div className="relative z-10" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.7)" }}>
+                <div className="mb-4 text-[#FF4500]" style={{ filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.8))" }}>
                   <BookOpen size={36} />
                 </div>
                 <h3 className="font-bold text-2xl mb-2" style={{ fontFamily: "var(--font-headline)", lineHeight: "1.5" }}>Devotional</h3>
@@ -446,8 +446,8 @@ export default function Home() {
             <div className="glass-card rounded-2xl p-8 group hover:border-[#FF4500]/50 transition-all duration-500 flex flex-col justify-end relative overflow-hidden" style={{ height: "clamp(320px, 50vw, 500px)" }}>
               <Image src="/boardroom-tutor.png" alt="Tutor DFN Boardroom" width={859} height={1253} className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[85%] h-auto z-[1]" style={{ imageRendering: "auto" }} />
               <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/90 via-black/50 to-transparent pointer-events-none" />
-              <div className="relative z-10">
-                <div className="mb-4 text-[#FF4500]">
+              <div className="relative z-10" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.7)" }}>
+                <div className="mb-4 text-[#FF4500]" style={{ filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.8))" }}>
                   <Briefcase size={36} />
                 </div>
                 <h3 className="font-bold text-2xl mb-2" style={{ fontFamily: "var(--font-headline)", lineHeight: "1.5" }}>Boardroom</h3>
