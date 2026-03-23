@@ -1,0 +1,401 @@
+@import "tailwindcss";
+
+@theme {
+  /* === PALETA FIEL /criar-landing (projeto landing.page) === */
+  --color-accent: #FF4500;
+  --color-accent-dark: #E03D00;
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-gray-bg: #F5F5F5;
+  --color-text-dark: #000000;
+  --color-text-gray: #6B7280;
+  --color-text-light: #9CA3AF;
+  --color-border-light: #E5E7EB;
+  --color-whatsapp-green: #25D366;
+  --color-cta-green: #2DD4A0;
+  --color-surface: #FDFCFB;
+  --color-dot: #d5ccc4;
+  --color-score-green: #00B046;
+  --color-score-yellow: #B45309;
+  --color-score-red: #DC2626;
+
+  /* Font families — fiel /criar-landing (Bebas Neue + Inter) */
+  --font-headline: "Bebas Neue", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-label: "Inter", sans-serif;
+}
+
+/* ===== BASE & TYPOGRAPHY ===== */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  overscroll-behavior: none;
+  touch-action: pan-y;
+  font-family: var(--font-body);
+  color: var(--color-text-dark);
+  background: var(--color-white);
+}
+
+/* === PADRAO DE ESPACAMENTO DE TEXTO === */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: 0.02em;
+}
+
+h1 { line-height: 1.4; }
+h2 { line-height: 1.4; }
+h3 { line-height: 1.4; }
+h4, h5, h6 { line-height: 1.4; }
+p { line-height: 1.3; }
+
+h1 + p, h2 + p, h3 + p, h4 + p { margin-top: 1.4em; }
+p + p { margin-top: 1.4em; }
+p + h2, p + h3, p + h4 { margin-top: 1.4em; }
+
+::selection {
+  background: var(--color-accent);
+  color: white;
+}
+
+/* ===== SECTION TRANSITIONS ===== */
+section {
+  transition: background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ===== DOT PATTERN — fiel ao landing.page ===== */
+.dot-pattern {
+  background-color: #FDFCFB;
+  background-image: radial-gradient(circle, #d5ccc4 0.8px, transparent 0.8px);
+  background-size: 24px 24px;
+}
+
+/* ===== FILM GRAIN — cinematic overlay ===== */
+section[class*="bg-black"]::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 128px 128px;
+}
+
+/* Remove visual seam between adjacent black sections */
+section[class*="bg-black"] + .ticker-wrap + section[class*="bg-black"],
+section[class*="bg-black"] + section[class*="bg-black"] {
+  margin-top: -1px;
+}
+
+/* ===== ORANGE GLOW — fiel ao landing.page ===== */
+.orange-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 80%;
+  background: radial-gradient(
+    ellipse 60% 50% at center,
+    rgba(255, 69, 0, 0.15) 0%,
+    rgba(255, 69, 0, 0.06) 40%,
+    transparent 70%
+  );
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===== GLASS CARD — fiel ao landing.page ===== */
+.glass-card {
+  background: linear-gradient(135deg, rgba(255, 69, 0, 0.08), rgba(255, 69, 0, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 14px rgba(255, 69, 0, 0.1), 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-card:hover {
+  background: rgba(255, 69, 0, 0.18);
+  border-color: rgba(255, 69, 0, 0.3);
+  box-shadow: inset 0 0 32px rgba(255, 69, 0, 0.15), 0 0 24px rgba(255, 69, 0, 0.25), 0 8px 28px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3px);
+}
+
+/* ===== TICKER — fiel ao landing.page (40s, pause on hover) ===== */
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-wrap {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.animate-ticker {
+  display: flex;
+  width: max-content;
+  flex-shrink: 0;
+  animation: ticker-scroll 33s linear infinite;
+}
+
+.animate-ticker > * {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.animate-ticker:hover {
+  animation-play-state: paused;
+}
+
+/* legacy ticker-move class */
+.ticker-move {
+  display: inline-block;
+  animation: ticker-scroll 33s linear infinite;
+  will-change: transform;
+}
+.ticker-move:hover {
+  animation-play-state: paused;
+}
+
+/* ===== CARD FLOAT — fiel ao landing.page ===== */
+@keyframes card-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.animate-card-float {
+  animation: card-float 3s ease-in-out infinite;
+}
+
+/* ===== FLOAT SLOW — decorative blobs ===== */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+.animate-float {
+  animation: float-slow 6s ease-in-out infinite;
+}
+.animate-float-delayed {
+  animation: float-slow 5s ease-in-out 2s infinite;
+}
+
+/* ===== PULSE CTA — fiel ao landing.page ===== */
+@keyframes pulse-cta {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+.animate-pulse-cta {
+  animation: pulse-cta 3s ease-in-out infinite;
+}
+
+/* ===== CTA SHIMMER — luz passando pelo botao (estado normal) ===== */
+@keyframes shimmer-slide {
+  0% { transform: translateX(-200%); }
+  100% { transform: translateX(300%); }
+}
+
+/* ===== BASE COMPARTILHADA ===== */
+.cta-btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* Luz passando — efeito shimmer */
+.cta-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  animation: shimmer-slide 2.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Hover: luz mais intensa */
+.cta-btn:hover::after {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  animation-duration: 1.5s;
+}
+
+/* Active: press feedback */
+.cta-btn:active {
+  transform: translateY(0) scale(0.97) !important;
+}
+
+/* ===== VERDE — seções com fundo claro ===== */
+.cta-green {
+  background: linear-gradient(180deg, #00C853, #00B046, #009A3E);
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(0, 180, 70, 0.4);
+}
+
+.cta-green:hover {
+  background: #FF4500;
+  color: #FFFFFF;
+  box-shadow: 0 0 30px rgba(255, 69, 0, 0.6), 0 12px 32px rgba(255, 69, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+.cta-green:active {
+  box-shadow: 0 0 15px rgba(255, 69, 0, 0.4), 0 4px 16px rgba(255, 69, 0, 0.3);
+}
+
+/* ===== LARANJA — seções com fundo escuro ===== */
+.cta-orange {
+  background: #FF4500;
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(255, 69, 0, 0.4);
+}
+
+.cta-orange:hover {
+  background: #FFFFFF;
+  color: #FF4500;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 12px 32px rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.cta-orange:active {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 0 4px 16px rgba(255, 255, 255, 0.2);
+}
+
+/* ===== ACCENT UNDERLINE — fiel ao landing.page ===== */
+.accent-underline {
+  text-decoration: none;
+  background-image: linear-gradient(to right, var(--color-accent), var(--color-accent));
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-size: 100% 3px;
+  padding-bottom: 2px;
+}
+
+/* ===== LIGHT CARDS — hover shadow + lift + glow + light sweep ===== */
+.bg-white.rounded-2xl,
+.bg-white.rounded-xl {
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Light sweep — hidden by default, appears on hover */
+.bg-white.rounded-2xl::before,
+.bg-white.rounded-xl::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 69, 0, 0.08), rgba(255, 255, 255, 0.3), rgba(255, 69, 0, 0.08), transparent);
+  transition: none;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bg-white.rounded-2xl:hover::before,
+.bg-white.rounded-xl:hover::before {
+  animation: cardLightSweep 0.6s ease-out forwards;
+}
+
+@keyframes cardLightSweep {
+  0% { left: -100%; }
+  100% { left: 150%; }
+}
+
+.bg-white.rounded-2xl:hover,
+.bg-white.rounded-xl:hover {
+  box-shadow: 0 12px 32px rgba(255, 69, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.06);
+  transform: translateY(-3px);
+  border-left-color: #E03D00 !important;
+}
+
+/* ===== TABLE ===== */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+table td, table th {
+  transition: background-color 0.3s ease;
+}
+table tr:hover td {
+  background-color: rgba(255, 69, 0, 0.02);
+}
+
+/* ===== FAQ ACCORDION ===== */
+details summary::-webkit-details-marker { display: none; }
+details summary { list-style: none; }
+
+/* ===== NAV ===== */
+nav {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ===== GUARANTEE BADGE — pulse glow ===== */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 40px rgba(255, 69, 0, 0.4); }
+  50% { box-shadow: 0 0 60px rgba(255, 69, 0, 0.6), 0 0 80px rgba(255, 69, 0, 0.2); }
+}
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* ===== HERO BADGE — breathing dot ===== */
+@keyframes breathe {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+.animate-pulse {
+  animation: breathe 2s ease-in-out infinite;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .orange-glow {
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 69, 0, 0.06) 0%,
+      transparent 70%
+    );
+  }
+  section[class*="bg-black"]::before {
+    opacity: 0.015;
+  }
+}
+
+/* ===== EXTRA SMALL MOBILE (< 480px) ===== */
+@media (max-width: 480px) {
+  .orange-glow {
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 69, 0, 0.04) 0%,
+      transparent 60%
+    );
+  }
+  .glass-card {
+    padding: 16px;
+  }
+  .ticker-move span {
+    font-size: 0.85rem !important;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #1a1c1c; }
+::-webkit-scrollbar-thumb { background: #FF4500; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #E03D00; }

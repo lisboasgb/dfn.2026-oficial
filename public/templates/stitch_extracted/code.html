@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tutor DFN | Aprenda Inglês Falando</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800;900&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed-variant": "#00513a",
+              "on-tertiary-fixed": "#002115",
+              "on-surface-variant": "#5d4038",
+              "on-error-container": "#93000a",
+              "secondary-fixed-dim": "#c6c6c6",
+              "on-primary-fixed-variant": "#872000",
+              "inverse-primary": "#ffb5a0",
+              "surface-tint": "#b12d00",
+              "on-secondary-container": "#646464",
+              "on-secondary": "#ffffff",
+              "surface": "#faf9f8",
+              "surface-bright": "#faf9f8",
+              "primary-container": "#d83900",
+              "primary-fixed": "#ffdbd1",
+              "surface-container-high": "#e9e8e7",
+              "tertiary": "#00694c",
+              "on-secondary-fixed": "#1b1b1b",
+              "on-primary-fixed": "#3b0900",
+              "tertiary-fixed": "#63fcc5",
+              "tertiary-container": "#008561",
+              "on-tertiary": "#ffffff",
+              "outline-variant": "#e7bdb2",
+              "surface-container": "#eeeeed",
+              "secondary": "#5e5e5e",
+              "error": "#ba1a1a",
+              "outline": "#926f66",
+              "on-primary-container": "#fffbff",
+              "on-tertiary-container": "#f5fff7",
+              "on-primary": "#ffffff",
+              "surface-container-highest": "#e3e2e1",
+              "primary": "#ad2c00",
+              "inverse-surface": "#2f3130",
+              "surface-dim": "#dadad9",
+              "secondary-container": "#e2e2e2",
+              "background": "#faf9f8",
+              "primary-fixed-dim": "#ffb5a0",
+              "on-error": "#ffffff",
+              "on-surface": "#1a1c1c",
+              "secondary-fixed": "#e2e2e2",
+              "surface-variant": "#e3e2e1",
+              "surface-container-low": "#f4f3f2",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-fixed-variant": "#474747",
+              "tertiary-fixed-dim": "#3edfaa",
+              "on-background": "#1a1c1c",
+              "inverse-on-surface": "#f1f0f0",
+              "error-container": "#ffdad6"
+            },
+            fontFamily: {
+              "headline": ["Epilogue"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .dot-pattern {
+        background-image: radial-gradient(#d5ccc4 1.5px, transparent 1.5px);
+        background-size: 24px 24px;
+      }
+      .shimmer {
+        background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+        background-size: 200% 100%;
+        animation: shimmer 3s infinite linear;
+      }
+      @keyframes shimmer {
+        0% { background-position: -200% 0; }
+        100% { background-position: 200% 0; }
+      }
+      .orange-glow {
+        background: radial-gradient(circle at center, rgba(173, 44, 0, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-white">
+<!-- 1. TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#faf9f8] dark:bg-black/90 backdrop-blur-xl border-b border-[#e7bdb2]/15 dark:border-white/10">
+<div class="flex justify-between items-center h-20 px-6 md:px-12 max-w-7xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-black dark:text-white">
+                Tutor DFN
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-['Epilogue'] font-extrabold uppercase tracking-[0.1em] text-sm text-[#ad2c00] dark:text-[#3edfaa] border-b-2 border-[#ad2c00] dark:border-[#3edfaa] pb-1" href="#">Metodologia</a>
+<a class="font-['Epilogue'] font-extrabold uppercase tracking-[0.1em] text-sm text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white transition-colors" href="#">Recursos</a>
+<a class="font-['Epilogue'] font-extrabold uppercase tracking-[0.1em] text-sm text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white transition-colors" href="#">Planos</a>
+<a class="font-['Epilogue'] font-extrabold uppercase tracking-[0.1em] text-sm text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white transition-colors" href="#">FAQ</a>
+</div>
+<button class="bg-primary text-white font-['Epilogue'] font-extrabold uppercase tracking-[0.1em] text-xs py-3 px-6 rounded-full hover:opacity-80 transition-all duration-300 active:scale-95">
+                Começar Agora
+            </button>
+</div>
+</nav>
+<!-- 2. Hero Section (Fundo Escuro) -->
+<section class="relative pt-32 pb-20 md:pt-48 md:pb-40 bg-black overflow-hidden">
+<div class="absolute inset-0 orange-glow pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+<div class="flex flex-col items-start">
+<h1 class="font-headline font-black text-4xl md:text-7xl text-white leading-[1.1] -tracking-[0.04em] mb-6">
+                    APRENDA INGLÊS <span class="text-primary-container">FALANDO</span> DESDE O PRIMEIRO DIA
+                </h1>
+<p class="text-white/70 text-lg md:text-xl max-w-lg mb-10 font-medium">
+                    Pratique inglês de verdade com o único Tutor que não te deixa travado. Uma experiência imersiva direto no seu WhatsApp.
+                </p>
+<div class="relative group">
+<div class="absolute -inset-1 bg-tertiary-fixed-dim rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+<button class="relative flex items-center gap-3 bg-gradient-to-r from-tertiary-fixed-dim to-tertiary-container text-on-tertiary-fixed px-8 py-5 rounded-full font-headline font-extrabold uppercase tracking-wider text-sm overflow-hidden group">
+<span class="shimmer absolute inset-0"></span>
+<span class="relative">QUERO O TUTOR DFN</span>
+<span class="material-symbols-outlined relative text-xl">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="relative flex justify-center">
+<div class="absolute -inset-20 bg-primary/10 rounded-full blur-3xl"></div>
+<img alt="Mockup do Tutor no WhatsApp" class="relative w-full max-w-[340px] md:max-w-md drop-shadow-2xl rounded-[3rem] border-[12px] border-zinc-800 object-cover aspect-[9/19]" data-alt="Modern smartphone displaying WhatsApp conversation with AI tutor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcD4UWtsvF5AB3smF7Z6PdiNif7afiOub1y997aQ7GmfJquK0BUgZ05_61AB7s_iFDfL2xnkYyHg7vddbQ-cOlYfONK1N2FU8EeyzmpI33Nk9xvjH2WEo5_0cAO9V7jwy_CiUuz6YDvAUKfNtN4mOXn1CKR1twxot0N1NeohFoR7nPVh4yJ4V67FQ6VuR-o50qjNdG1VJpZ0KAPm1SNmrWbu7XtQ6wQ5YHssSlXoSmyzaYuv4PnvUzgH5oHjZBS8yw2sHEtb8MkX4"/>
+</div>
+</div>
+</section>
+<!-- 3. Seção Problema (Fundo Claro) -->
+<section class="relative py-24 md:py-32 bg-surface dot-pattern overflow-hidden">
+<div class="max-w-5xl mx-auto px-6 md:px-12 relative z-10">
+<div class="inline-block mb-6 px-4 py-1.5 rounded-full bg-primary/10 text-primary font-headline font-extrabold uppercase tracking-[0.15em] text-xs">
+                O PROBLEMA REAL
+            </div>
+<h2 class="font-headline font-black text-3xl md:text-6xl text-on-surface leading-tight -tracking-[0.03em] mb-16">
+                NO BRASIL ENSINAM INGLÊS NO PAPEL. NA HORA DE FALAR <span class="text-primary italic">TODOS TRAVAM.</span>
+</h2>
+<div class="grid md:grid-cols-2 gap-6 mb-16">
+<div class="p-8 bg-surface-container-lowest rounded-2xl border border-primary/15 flex gap-5 group hover:bg-primary transition-colors duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-white text-3xl shrink-0" data-icon="block">block</span>
+<div>
+<h4 class="font-headline font-extrabold text-xl mb-2 group-hover:text-white">Gramática Excessiva</h4>
+<p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed">Você estuda regras por anos mas não consegue formular uma frase simples em voz alta.</p>
+</div>
+</div>
+<div class="p-8 bg-surface-container-lowest rounded-2xl border border-primary/15 flex gap-5 group hover:bg-primary transition-colors duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-white text-3xl shrink-0" data-icon="timer_off">timer_off</span>
+<div>
+<h4 class="font-headline font-extrabold text-xl mb-2 group-hover:text-white">Feedback Lento</h4>
+<p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed">Erros não corrigidos na hora se tornam vícios de linguagem impossíveis de tirar depois.</p>
+</div>
+</div>
+<div class="p-8 bg-surface-container-lowest rounded-2xl border border-primary/15 flex gap-5 group hover:bg-primary transition-colors duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-white text-3xl shrink-0" data-icon="sentiment_very_dissatisfied">sentiment_very_dissatisfied</span>
+<div>
+<h4 class="font-headline font-extrabold text-xl mb-2 group-hover:text-white">Medo de Errar</h4>
+<p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed">A pressão de falar com humanos faz você travar por vergonha de sua pronúncia.</p>
+</div>
+</div>
+<div class="p-8 bg-surface-container-lowest rounded-2xl border border-primary/15 flex gap-5 group hover:bg-primary transition-colors duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-white text-3xl shrink-0" data-icon="attach_money">attach_money</span>
+<div>
+<h4 class="font-headline font-extrabold text-xl mb-2 group-hover:text-white">Preço Abusivo</h4>
+<p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed">Pagar por hora de professor particular é inviável para ter a prática diária necessária.</p>
+</div>
+</div>
+</div>
+<button class="group flex items-center gap-2 font-headline font-extrabold text-primary text-xl hover:translate-x-2 transition-transform">
+                QUERO O TUTOR DFN 
+                <span class="material-symbols-outlined">trending_flat</span>
+</button>
+</div>
+</section>
+<!-- 4. Seção 'O que é o Tutor DFN' (Fundo Escuro) -->
+<section class="relative py-24 md:py-32 bg-black text-white overflow-hidden">
+<div class="absolute top-0 right-0 w-96 h-96 bg-primary/20 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
+<div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+<div class="inline-block mb-6 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 font-headline font-extrabold uppercase tracking-[0.15em] text-xs">
+                O QUE É O TUTOR DFN
+            </div>
+<h2 class="font-headline font-black text-3xl md:text-6xl mb-16 max-w-2xl leading-tight">
+                SEU TUTOR DE IA <br/><span class="text-tertiary-fixed-dim">NO WHATSAPP</span>
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="group relative aspect-[4/5] bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden p-8 flex flex-col justify-end">
+<div class="absolute top-8 right-8">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="forum">forum</span>
+</div>
+<div class="relative z-10">
+<h4 class="font-headline font-extrabold text-xl mb-3">Texto ou Áudio</h4>
+<p class="text-white/60 leading-relaxed">Converse como se fosse um amigo. Ele entende e responde instantaneamente.</p>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<!-- Card 2 -->
+<div class="group relative aspect-[4/5] bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden p-8 flex flex-col justify-end">
+<div class="absolute top-8 right-8">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="bolt">bolt</span>
+</div>
+<div class="relative z-10">
+<h4 class="font-headline font-extrabold text-xl mb-3">Correção Realtime</h4>
+<p class="text-white/60 leading-relaxed">Falou errado? O tutor sugere a forma correta sem interromper o fluxo.</p>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<!-- Card 3 -->
+<div class="group relative aspect-[4/5] bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden p-8 flex flex-col justify-end">
+<div class="absolute top-8 right-8">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="analytics">analytics</span>
+</div>
+<div class="relative z-10">
+<h4 class="font-headline font-extrabold text-xl mb-3">Scorecard</h4>
+<p class="text-white/60 leading-relaxed">Acompanhe sua pontuação de precisão e fluência a cada mensagem.</p>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<!-- Card 4 -->
+<div class="group relative aspect-[4/5] bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden p-8 flex flex-col justify-end">
+<div class="absolute top-8 right-8">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="help_center">help_center</span>
+</div>
+<div class="relative z-10">
+<h4 class="font-headline font-extrabold text-xl mb-3">Ajuda ao Travar</h4>
+<p class="text-white/60 leading-relaxed">Não sabe o que dizer? Digite "/ajuda" e receba sugestões contextuais.</p>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Seção Relatório (Fundo Claro) -->
+<section class="py-24 md:py-32 bg-surface dot-pattern">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<h2 class="font-headline font-black text-3xl md:text-5xl text-on-surface mb-16 text-center max-w-4xl mx-auto leading-tight">
+                CADA SESSÃO FECHA COM UM <span class="bg-primary px-3 py-1 text-white">RELATÓRIO COMPLETO</span>
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1: Parar -->
+<div class="bg-white p-8 rounded-2xl border-l-8 border-error shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-error" data-icon="cancel">cancel</span>
+<h4 class="font-headline font-extrabold text-lg uppercase tracking-tight">Pare de falar</h4>
+</div>
+<p class="text-on-surface-variant font-medium">Identificamos 3 erros repetitivos na sua pronúncia do "th". Foque nisso amanhã.</p>
+</div>
+<!-- Card 2: Continuar -->
+<div class="bg-white p-8 rounded-2xl border-l-8 border-tertiary-container shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-tertiary-container" data-icon="check_circle">check_circle</span>
+<h4 class="font-headline font-extrabold text-lg uppercase tracking-tight">Continue assim</h4>
+</div>
+<p class="text-on-surface-variant font-medium">Seu uso de conectores aumentou a fluência em 15% nesta sessão. Ótima evolução!</p>
+</div>
+<!-- Card 3: Começar -->
+<div class="bg-white p-8 rounded-2xl border-l-8 border-primary shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="play_circle">play_circle</span>
+<h4 class="font-headline font-extrabold text-lg uppercase tracking-tight">Comece a usar</h4>
+</div>
+<p class="text-on-surface-variant font-medium">Recomendamos introduzir o 'Present Perfect' na sua próxima conversa.</p>
+</div>
+<!-- Card 4: Resumo -->
+<div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-outline-variant/30">
+<div class="text-xs font-bold text-on-surface/40 uppercase mb-4 tracking-widest">Resumo da Sessão</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="font-bold">Tempo</span>
+<span class="text-primary font-headline">24 min</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[75%]"></div>
+</div>
+</div>
+</div>
+<!-- Card 5: Evolução -->
+<div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-outline-variant/30 flex flex-col justify-center items-center text-center">
+<div class="text-primary text-5xl font-black font-headline mb-2">+2.4k</div>
+<p class="text-on-surface-variant text-sm font-bold uppercase tracking-widest">Novas palavras praticadas</p>
+</div>
+<!-- Card 6: Revisão -->
+<div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-outline-variant/30">
+<div class="flex items-center justify-between mb-4">
+<h4 class="font-headline font-extrabold">Revisão de Erros</h4>
+<span class="bg-error/10 text-error text-[10px] px-2 py-1 rounded-full font-black">8 ITENS</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container text-xs px-3 py-1.5 rounded-full font-medium italic">"I have went"</span>
+<span class="bg-surface-container text-xs px-3 py-1.5 rounded-full font-medium italic">"Pronunciation of World"</span>
+<span class="bg-surface-container text-xs px-3 py-1.5 rounded-full font-medium italic">"She don't"</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer Simple -->
+<footer class="bg-black w-full py-12 px-6 md:px-12">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto">
+<div class="text-xl font-bold text-white">Tutor DFN</div>
+<div class="flex gap-8">
+<a class="font-['Manrope'] text-sm text-white/50 hover:text-white transition-colors" href="#">Termos de Uso</a>
+<a class="font-['Manrope'] text-sm text-white/50 hover:text-white transition-colors" href="#">Política de Privacidade</a>
+<a class="font-['Manrope'] text-sm text-white/50 hover:text-[#3edfaa] transition-colors" href="#">Suporte WhatsApp</a>
+</div>
+<div class="font-['Manrope'] text-sm text-white/50">
+                © 2024 Destra For The Nations. Todos os direitos reservados.
+            </div>
+</div>
+</footer>
+</body></html>
