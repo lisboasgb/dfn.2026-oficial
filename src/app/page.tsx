@@ -443,8 +443,8 @@ export default function Home() {
             </div>
             {/* Boardroom */}
             <div className="glass-card rounded-2xl p-8 group hover:border-[#FF4500]/50 transition-all duration-500 flex flex-col justify-end relative overflow-hidden" style={{ height: "clamp(320px, 50vw, 500px)" }}>
-              <Image src="/boardroom-tutor.png" alt="Tutor DFN Boardroom" fill className="object-contain object-center opacity-30 group-hover:opacity-50 transition-opacity duration-500 scale-90 group-hover:scale-95" />
-              <div className="absolute top-0 left-0 w-full h-full opacity-40 group-hover:opacity-60 transition-opacity bg-gradient-to-t from-black/80 to-transparent" />
+              <Image src="/boardroom-tutor.png" alt="Tutor DFN Boardroom" fill className="object-contain object-center opacity-80 group-hover:opacity-100 transition-opacity duration-500 !top-auto !bottom-0 scale-110 group-hover:scale-115" style={{ objectPosition: "center bottom" }} />
+              <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/90 via-black/50 to-transparent pointer-events-none" />
               <div className="relative z-10">
                 <div className="mb-4 text-[#FF4500]">
                   <Briefcase size={36} />
