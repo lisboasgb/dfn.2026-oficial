@@ -421,7 +421,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Street Talk */}
             <div className="glass-card rounded-2xl p-8 group hover:border-[#FF4500]/50 transition-all duration-500 flex flex-col justify-end relative overflow-hidden" style={{ height: "clamp(320px, 50vw, 500px)" }}>
-              <Image src="/streettalk-tutor.png" alt="Tutor DFN Street Talk" width={1028} height={1056} className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] h-auto z-[1]" />
+              <Image src="/streettalk-tutor.png" alt="Tutor DFN Street Talk" width={1028} height={1056} className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[70%] w-auto z-[1]" />
               <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/90 via-black/50 to-transparent pointer-events-none" />
               <div className="relative z-10" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.7)" }}>
                 <div className="mb-4 text-[#FF4500]" style={{ filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.8))" }}>
@@ -433,7 +433,7 @@ export default function Home() {
             </div>
             {/* Devotional */}
             <div className="glass-card rounded-2xl p-8 group hover:border-[#FF4500]/50 transition-all duration-500 flex flex-col justify-end relative overflow-hidden" style={{ height: "clamp(320px, 50vw, 500px)" }}>
-              <Image src="/devotional-tutor.png" alt="Tutor DFN Devotional" width={630} height={900} className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[85%] h-auto z-[1]" />
+              <Image src="/devotional-tutor.png" alt="Tutor DFN Devotional" width={630} height={900} className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[70%] w-auto z-[1]" />
               <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/90 via-black/50 to-transparent pointer-events-none" />
               <div className="relative z-10" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.7)" }}>
                 <div className="mb-4 text-[#FF4500]" style={{ filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.8))" }}>
@@ -445,7 +445,7 @@ export default function Home() {
             </div>
             {/* Boardroom */}
             <div className="glass-card rounded-2xl p-8 group hover:border-[#FF4500]/50 transition-all duration-500 flex flex-col justify-end relative overflow-hidden" style={{ height: "clamp(320px, 50vw, 500px)" }}>
-              <Image src="/boardroom-tutor.png" alt="Tutor DFN Boardroom" width={859} height={1253} className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[85%] h-auto z-[1]" style={{ imageRendering: "auto" }} />
+              <Image src="/boardroom-tutor.png" alt="Tutor DFN Boardroom" width={859} height={1253} className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[70%] w-auto z-[1]" />
               <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/90 via-black/50 to-transparent pointer-events-none" />
               <div className="relative z-10" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.7)" }}>
                 <div className="mb-4 text-[#FF4500]" style={{ filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.8))" }}>
