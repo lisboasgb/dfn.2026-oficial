@@ -85,7 +85,7 @@ export default function Home() {
         <div className="orange-glow" aria-hidden="true" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Coluna esquerda — Headline */}
-          <div className="flex flex-col justify-between text-center lg:text-left items-center lg:items-start">
+          <div className="flex flex-col justify-between text-center md:text-left items-center md:items-start">
             <div>
               <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 uppercase text-xs text-white" style={{ fontFamily: "var(--font-headline)", fontWeight: 800, letterSpacing: "0.15em" }}>
                 O PROBLEMA REAL
@@ -176,7 +176,7 @@ export default function Home() {
 
       {/* 4. Secao O que e o Tutor DFN (Fundo Claro) - Z-pattern */}
       <section className="relative py-24 md:py-32 bg-[#FDFCFB] dot-pattern overflow-hidden">
-        <div className="max-w-[1440px] mx-auto px-6 md:px-12 relative z-10">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 relative z-10">
           <div className="inline-block mb-6 px-4 py-1.5 rounded-full bg-black/5 border border-black/10 font-extrabold uppercase tracking-[0.15em] text-xs text-black" style={{ fontFamily: "var(--font-headline)" }}>
             O QUE É O TUTOR DFN
           </div>
@@ -451,12 +451,12 @@ export default function Home() {
       {/* 5. Secao Relatório (Fundo Escuro) */}
       <section className="py-24 md:py-32 bg-black relative overflow-hidden">
         <div className="orange-glow" aria-hidden="true" />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10">
           <div className="text-center mb-16">
             <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 text-white font-extrabold uppercase tracking-[0.15em] text-xs" style={{ fontFamily: "var(--font-headline)" }}>
               AO FINAL DE CADA SESSÃO
             </div>
-            <h2 className="font-black text-2xl sm:text-3xl md:text-5xl text-white mb-6 max-w-4xl mx-auto leading-normal" style={{ fontFamily: "var(--font-headline)" }}>
+            <h2 className="font-black text-xl sm:text-3xl md:text-5xl text-white mb-6 max-w-4xl mx-auto leading-normal px-2 sm:px-0" style={{ fontFamily: "var(--font-headline)" }}>
               CADA SESSÃO FECHA COM UM <span className="bg-[#FF4500] px-2 py-0.5 sm:px-3 sm:py-1 text-white inline-block mt-1 sm:mt-0">RELATÓRIO COMPLETO</span>
             </h2>
             <p className="text-white/50 text-lg max-w-2xl mx-auto font-medium" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>
@@ -581,7 +581,7 @@ export default function Home() {
 
       {/* 6. Secao Modos de Pratica (Fundo Claro) */}
       <section className="bg-[#FDFCFB] dot-pattern pt-16 pb-16 md:pt-24 md:pb-24 overflow-hidden relative">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10">
           <h2 className="font-extrabold text-black tracking-normal mb-8 sm:mb-16 text-center md:text-left md:whitespace-nowrap" style={{ fontFamily: "var(--font-headline)", fontSize: "clamp(1.4rem, 5vw, 3.5rem)" }}>
             PRATIQUE O INGLÊS QUE<br className="sm:hidden" /> VOCÊ VAI <span className="bg-[#FF4500] text-white px-2 py-0.5 sm:px-3 sm:py-1 inline-block mt-1 sm:mt-0">REALMENTE USAR</span>
           </h2>
@@ -663,20 +663,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. Ticker Divisor */}
-      <div className="bg-[#FF4500] ticker-wrap" style={{ paddingTop: "5px", paddingBottom: "5px" }}>
-        <div className="ticker-move">
-          {Array.from({ length: 8 }).map((_, i) => (
-            <span key={i} className="font-black text-white uppercase mx-3" style={{ fontFamily: "var(--font-headline)", fontSize: "clamp(0.95rem, 2.3vw, 1.58rem)" }}>Esteja preparado para viver seu Chamado! &bull; </span>
-          ))}
-        </div>
-      </div>
-
       {/* 8. Tabela Comparativa (Fundo Claro) */}
-      <section className="bg-[#FDFCFB] py-24 dot-pattern">
-        <div className="max-w-5xl mx-auto px-6">
+      <section className="bg-[#FDFCFB] py-12 md:py-16 dot-pattern">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <h2 className="font-extrabold text-xl sm:text-3xl md:text-5xl text-center mb-8 sm:mb-16 tracking-normal leading-normal" style={{ fontFamily: "var(--font-headline)" }}>
-            NENHUM APP, ESCOLA OU PROFESSOR FAZ O QUE O TUTOR DFN FAZ
+            NENHUM APP, ESCOLA OU PROFESSOR<br /><span className="bg-[#FF4500] text-white px-3 py-1 inline-block mt-2">FAZ O QUE O TUTOR DFN FAZ</span>
 
           </h2>
           {/* === MOBILE: cards comparativos empilhados === */}
@@ -782,7 +773,7 @@ export default function Home() {
       {/* 9. Depoimentos (Fundo Escuro) */}
       <section className="bg-black py-24 relative">
         <div className="orange-glow" aria-hidden="true" />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10">
           <h2 className="font-extrabold text-2xl sm:text-4xl md:text-5xl text-white mb-8 sm:mb-16 tracking-normal text-center md:text-left" style={{ fontFamily: "var(--font-headline)" }}>
             NÃO É O QUE A GENTE DIZ.<br /><span className="text-[#FF4500]">É O QUE ELES VIVERAM.</span>
           </h2>
@@ -834,14 +825,14 @@ export default function Home() {
       </div>
 
       {/* 10. Oferta/Pricing (Fundo Claro) */}
-      <section className="bg-[#FDFCFB] py-24 relative overflow-hidden">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="bg-[#FDFCFB] py-16 md:py-24 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8 md:px-12">
           <div className="flex flex-col lg:flex-row gap-8 md:gap-16 items-center">
             <div className="lg:w-1/2">
               <div className="text-center md:text-left"><span className="bg-[#FF4500]/10 text-[#FF4500] px-4 py-2 rounded-full font-bold text-xs uppercase tracking-widest mb-6 inline-block" style={{ fontFamily: "var(--font-label)" }}>Acesso Anual</span></div>
-              <h2 className="font-extrabold tracking-normal mb-6 sm:mb-8 text-center md:text-left" style={{ fontFamily: "var(--font-headline)", fontSize: "clamp(1.5rem, 4vw, 3rem)", lineHeight: "1.2" }}>
+              <h2 className="font-extrabold tracking-normal mb-6 sm:mb-8 text-center md:text-left" style={{ fontFamily: "var(--font-headline)", fontSize: "clamp(1.25rem, 4vw, 3rem)", lineHeight: "1.2" }}>
                 UM ANO INTEIRO DO TUTOR DFN.<br />
-                <span className="text-[#FF4500]" style={{ fontSize: "clamp(1.8rem, 5vw, 3.8rem)" }}>POR MENOS DO QUE UMA AULA PARTICULAR.</span>
+                <span className="text-[#FF4500]" style={{ fontSize: "clamp(1.4rem, 4.5vw, 3.8rem)" }}>POR MENOS DO QUE UMA AULA PARTICULAR.</span>
               </h2>
               <ul className="space-y-4">
                 <li className="flex items-center gap-3">
@@ -866,7 +857,7 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            <div className="lg:w-1/2 w-full">
+            <div className="lg:w-1/2 w-full px-2 sm:px-0">
               <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-10 shadow-2xl relative overflow-hidden" style={{ borderTop: "8px solid #FF4500" }}>
                 <div className="absolute top-4 right-4 bg-[#2DD4A0] text-[#FFFFFF] font-bold px-3 py-1 rounded-full text-xs" style={{ fontFamily: "var(--font-label)" }}>MAIS POPULAR</div>
                 <p className="font-bold text-[#6B7280] mb-4 uppercase tracking-widest text-sm" style={{ fontFamily: "var(--font-headline)" }}>Plano de Embaixador</p>
@@ -904,7 +895,7 @@ export default function Home() {
       {/* 11. Garantia e FAQ (Fundo Escuro) */}
       <section className="relative bg-black py-24 text-white overflow-hidden">
         <div className="orange-glow" aria-hidden="true" />
-        <div className="max-w-4xl mx-auto px-6 relative z-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
           {/* Guarantee Card */}
           <div className="glass-card rounded-2xl p-5 sm:p-8 mb-12 md:mb-24 flex flex-col md:flex-row items-center gap-6 sm:gap-8" style={{ borderColor: "rgba(173,44,0,0.2)" }}>
             <div className="w-20 h-20 sm:w-32 sm:h-32 flex-shrink-0">
@@ -1023,7 +1014,7 @@ export default function Home() {
           style={{ backgroundImage: "url('/mundo.svg')", backgroundSize: "cover" }}
           aria-hidden="true"
         />
-        <div className="max-w-4xl mx-auto px-6 relative z-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
           <h2 className="font-extrabold text-3xl sm:text-5xl md:text-7xl tracking-normal text-white mb-8 sm:mb-12 leading-none" style={{ fontFamily: "var(--font-headline)" }}>
             QUAL NAÇÃO QUEIMA EM SEU CORAÇÃO?
           </h2>
