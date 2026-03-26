@@ -59,9 +59,9 @@ export default function Hero() {
                 marginBottom: "24px",
               }}
             >
-              APRENDA INGLÊS{" "}
-              <span style={{ color: "#FF4500" }}>FALANDO</span>{" "}
-              DESDE O PRIMEIRO DIA
+              APRENDA INGLÊS<br />
+              <span style={{ color: "#FF4500" }}>FALANDO</span> DESDE<br />
+              O PRIMEIRO DIA
             </h1>
           </AnimateOnScroll>
 

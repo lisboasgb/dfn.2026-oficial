@@ -13,11 +13,9 @@ export default function Navbar() {
       }}
     >
       <div
-        className="flex justify-between items-center mx-auto"
+        className="flex justify-between items-center mx-auto px-4 sm:px-6"
         style={{
-          height: "80px",
-          paddingLeft: "24px",
-          paddingRight: "24px",
+          height: "64px",
           maxWidth: "1280px",
         }}
       >
@@ -27,6 +25,7 @@ export default function Navbar() {
           alt="Logo DFN"
           width={120}
           height={40}
+          className="w-[90px] sm:w-[120px] h-auto"
           style={{ objectFit: "contain" }}
           priority
         />
@@ -89,9 +88,9 @@ export default function Navbar() {
           style={{
             backgroundColor: "#FF4500",
             fontFamily: "var(--font-sans)",
-            fontSize: "12px",
+            fontSize: "11px",
             letterSpacing: "0.1em",
-            padding: "12px 24px",
+            padding: "10px 16px",
           }}
         >
           Começar Agora

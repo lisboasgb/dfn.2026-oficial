@@ -40,9 +40,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="scroll-smooth">
       <body
-        className={`${bebasNeue.variable} ${inter.variable} antialiased overflow-x-hidden relative`}
+        className={`${bebasNeue.variable} ${inter.variable} antialiased relative`}
       >
-        <div className="w-full overflow-x-hidden">
+        <div className="w-full">
           {children}
         </div>
       </body>
