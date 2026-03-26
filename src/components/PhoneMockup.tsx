@@ -24,7 +24,7 @@ interface PhoneMockupProps {
 
 export default function PhoneMockup({ children, className = "" }: PhoneMockupProps) {
   return (
-    <div className={`relative ${className}`}>
+    <div className={`relative transition-transform duration-300 ease-out hover:scale-105 hover:-translate-y-2 ${className}`}>
       {/* ---- iPhone physical buttons (titanium) ---- */}
       <div className="absolute pointer-events-none z-20" style={{ left: "-4px", top: "0", width: "calc(100% + 8px)", height: "100%" }}>
         <div

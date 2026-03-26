@@ -32,7 +32,7 @@ export default function Home() {
       {/* 1. Hero Section (Fundo Escuro) */}
       <section className="relative pt-16 pb-20 md:pt-24 md:pb-40 bg-[#FDFCFB] dot-pattern overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div className="flex flex-col items-start">
+          <div className="flex flex-col items-center text-center md:items-start md:text-left">
             <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-black/15 bg-black/5 font-extrabold uppercase tracking-[0.15em] text-xs text-black" style={{ fontFamily: "var(--font-headline)" }}>
               <span className="w-2 h-2 rounded-full bg-[#FF4500] animate-pulse" />
               Disponível direto no WhatsApp
@@ -85,7 +85,7 @@ export default function Home() {
         <div className="orange-glow" aria-hidden="true" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Coluna esquerda — Headline */}
-          <div className="flex flex-col justify-between">
+          <div className="flex flex-col justify-between text-center lg:text-left items-center lg:items-start">
             <div>
               <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 uppercase text-xs text-white" style={{ fontFamily: "var(--font-headline)", fontWeight: 800, letterSpacing: "0.15em" }}>
                 O PROBLEMA REAL
@@ -96,51 +96,51 @@ export default function Home() {
                 <span className="text-[#FF4500] italic">NA HORA DE FALAR,<br />
                 TODOS TRAVAM.</span>
               </h2>
-              <p className="text-white/50 italic font-medium" style={{ fontFamily: "var(--font-body)", fontSize: "16px", lineHeight: "1.4", maxWidth: "420px" }}>
+              <p className="text-white/50 italic font-medium mx-auto lg:mx-0" style={{ fontFamily: "var(--font-body)", fontSize: "16px", lineHeight: "1.4", maxWidth: "420px" }}>
                 O país com mais escolas de inglês do mundo e apenas 2% são fluentes. No fim é muita teoria e pouca prática.
               </p>
             </div>
           </div>
 
           {/* Coluna direita — 6 cards empilhados */}
-          <div className="flex flex-col" style={{ gap: "12px" }}>
+          <div className="flex flex-col px-2 sm:px-0" style={{ gap: "12px" }}>
             {/* Card 1 */}
-            <div className="bg-white/5 border border-white/10 rounded-xl flex items-start hover:bg-white/10 hover:-translate-y-1 active:bg-white/10 active:-translate-y-1 transition-all duration-200 cursor-default" style={{ padding: "20px 24px", gap: "16px", borderLeft: "4px solid #FF4500" }}>
+            <div className="bg-white/5 border border-white/10 rounded-xl flex items-start hover:bg-white/10 hover:-translate-y-1 active:bg-white/10 active:-translate-y-1 transition-all duration-200 cursor-default" style={{ padding: "16px 16px", gap: "12px", borderLeft: "4px solid #FF4500" }}>
               <Ban className="text-[#FF4500] shrink-0 mt-0.5" size={20} />
               <p className="text-white/60 text-sm" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>
                 Escolas tradicionais focam na <strong className="text-white">gramática</strong> e não te ensinam a conversar
               </p>
             </div>
             {/* Card 2 */}
-            <div className="bg-white/5 border border-white/10 rounded-xl flex items-start hover:bg-white/10 hover:-translate-y-1 active:bg-white/10 active:-translate-y-1 transition-all duration-200 cursor-default" style={{ padding: "20px 24px", gap: "16px", borderLeft: "4px solid #FF4500" }}>
+            <div className="bg-white/5 border border-white/10 rounded-xl flex items-start hover:bg-white/10 hover:-translate-y-1 active:bg-white/10 active:-translate-y-1 transition-all duration-200 cursor-default" style={{ padding: "16px 16px", gap: "12px", borderLeft: "4px solid #FF4500" }}>
               <DollarSign className="text-[#FF4500] shrink-0 mt-0.5" size={20} />
               <p className="text-white/60 text-sm" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>
                 Aulas de conversação <strong className="text-white">custam caro</strong> e dependem de agenda
               </p>
             </div>
             {/* Card 3 */}
-            <div className="bg-white/5 border border-white/10 rounded-xl flex items-start hover:bg-white/10 hover:-translate-y-1 active:bg-white/10 active:-translate-y-1 transition-all duration-200 cursor-default" style={{ padding: "20px 24px", gap: "16px", borderLeft: "4px solid #FF4500" }}>
+            <div className="bg-white/5 border border-white/10 rounded-xl flex items-start hover:bg-white/10 hover:-translate-y-1 active:bg-white/10 active:-translate-y-1 transition-all duration-200 cursor-default" style={{ padding: "16px 16px", gap: "12px", borderLeft: "4px solid #FF4500" }}>
               <Clock className="text-[#FF4500] shrink-0 mt-0.5" size={20} />
               <p className="text-white/60 text-sm" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>
                 Sem praticar todo dia, você <strong className="text-white">não expande vocabulário</strong> nem fixa os aprendizados
               </p>
             </div>
             {/* Card 4 */}
-            <div className="bg-white/5 border border-white/10 rounded-xl flex items-start hover:bg-white/10 hover:-translate-y-1 active:bg-white/10 active:-translate-y-1 transition-all duration-200 cursor-default" style={{ padding: "20px 24px", gap: "16px", borderLeft: "4px solid #FF4500" }}>
+            <div className="bg-white/5 border border-white/10 rounded-xl flex items-start hover:bg-white/10 hover:-translate-y-1 active:bg-white/10 active:-translate-y-1 transition-all duration-200 cursor-default" style={{ padding: "16px 16px", gap: "12px", borderLeft: "4px solid #FF4500" }}>
               <Frown className="text-[#FF4500] shrink-0 mt-0.5" size={20} />
               <p className="text-white/60 text-sm" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>
                 Em turma, o professor não tem como te corrigir o tempo todo — quando tem prática, <strong className="text-white">você fala pouco</strong>
               </p>
             </div>
             {/* Card 5 */}
-            <div className="bg-white/5 border border-white/10 rounded-xl flex items-start hover:bg-white/10 hover:-translate-y-1 active:bg-white/10 active:-translate-y-1 transition-all duration-200 cursor-default" style={{ padding: "20px 24px", gap: "16px", borderLeft: "4px solid #FF4500" }}>
+            <div className="bg-white/5 border border-white/10 rounded-xl flex items-start hover:bg-white/10 hover:-translate-y-1 active:bg-white/10 active:-translate-y-1 transition-all duration-200 cursor-default" style={{ padding: "16px 16px", gap: "12px", borderLeft: "4px solid #FF4500" }}>
               <XCircle className="text-[#FF4500] shrink-0 mt-0.5" size={20} />
               <p className="text-white/60 text-sm" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>
                 Sem correção em tempo real, você <strong className="text-white">não sabe seus erros</strong> e os repete sem perceber
               </p>
             </div>
             {/* Card 6 */}
-            <div className="bg-white/5 border border-white/10 rounded-xl flex items-start hover:bg-white/10 hover:-translate-y-1 active:bg-white/10 active:-translate-y-1 transition-all duration-200 cursor-default" style={{ padding: "20px 24px", gap: "16px", borderLeft: "4px solid #FF4500" }}>
+            <div className="bg-white/5 border border-white/10 rounded-xl flex items-start hover:bg-white/10 hover:-translate-y-1 active:bg-white/10 active:-translate-y-1 transition-all duration-200 cursor-default" style={{ padding: "16px 16px", gap: "12px", borderLeft: "4px solid #FF4500" }}>
               <Ban className="text-[#FF4500] shrink-0 mt-0.5" size={20} />
               <p className="text-white/60 text-sm" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>
                 Falar para o espelho ou repetir frases gravadas <strong className="text-white">não simula uma conversa de verdade</strong>
@@ -558,7 +558,7 @@ export default function Home() {
           </div>
 
           <div className="mt-20 text-center space-y-8">
-            <p className="text-white/50 font-bold text-lg" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>Você já viu algum professor passando todas essas informações tão específicas?</p>
+            <p className="text-white font-bold text-lg" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>Você já viu algum professor passando todas essas informações tão específicas?</p>
             <a
               href="#precos"
               className="cta-btn cta-orange rounded-full py-3.5 px-8 sm:py-4 sm:px-12 text-lg sm:text-xl font-bold uppercase cursor-pointer"
@@ -588,7 +588,7 @@ export default function Home() {
           {/* === MOBILE: cards compactos, texto sempre visível, fade-in no scroll === */}
           <div className="flex flex-col gap-6 md:hidden">
             {[
-              { title: "Street Talk", desc: "Gírias, expressões e o ritmo real das conversas cotidianas nas nações.", img: "/streettalk-tutor.png", icon: <MessageCircle size={28} />, delay: 0 },
+              { title: "Street Talk", desc: "Gírias, expressões e o ritmo real das conversas cotidianas nas nações.", img: "/TUTOR_02.png", icon: <MessageCircle size={28} />, delay: 0 },
               { title: "Devotional", desc: "Vocabulário bíblico e teológico para pregar e orar com autoridade espiritual.", img: "/devotional-tutor.png", icon: <BookOpen size={28} />, delay: 1 },
               { title: "Boardroom", desc: "Inglês executivo para reuniões, projetos e networking profissional global.", img: "/boardroom-tutor.png", icon: <Briefcase size={28} />, delay: 2 },
             ].map((card) => (
@@ -612,57 +612,48 @@ export default function Home() {
           {/* === DESKTOP: efeito carta descendo no hover === */}
           <div className="hidden md:grid md:grid-cols-3 gap-8">
             {/* Street Talk */}
-            <div className="rounded-2xl group relative overflow-hidden cursor-pointer" style={{ height: "500px" }}>
-              <div className="absolute inset-0 z-[1] rounded-2xl flex flex-col justify-center items-center text-center p-8" style={{ background: "linear-gradient(180deg, #FF4500 0%, #CC3700 100%)" }}>
-                <h3 className="font-bold text-3xl mb-4 text-white" style={{ fontFamily: "var(--font-headline)", lineHeight: "1.5" }}>Street Talk</h3>
-                <p className="text-white/90 font-medium max-w-[280px]" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4", fontSize: "1.05rem" }}>Gírias, expressões e o ritmo real das conversas cotidianas nas nações.</p>
-                <div className="mt-6 text-white/80">
-                  <MessageCircle size={32} />
+            <div className="rounded-2xl group relative overflow-visible cursor-pointer" style={{ height: "500px" }}>
+              <div className="absolute inset-0 z-[1] rounded-2xl flex flex-col items-center text-center px-8 pt-10" style={{ background: "linear-gradient(180deg, #FF4500 0%, #CC3700 100%)" }}>
+                <div className="mb-3 text-white">
+                  <MessageCircle size={28} />
                 </div>
+                <h3 className="font-bold text-2xl mb-2 text-white" style={{ fontFamily: "var(--font-headline)", lineHeight: "1.3" }}>Street Talk</h3>
+                <p className="text-white/90 font-medium max-w-[260px] text-sm" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>Gírias, expressões e o ritmo real das conversas cotidianas nas nações.</p>
               </div>
-              <div className="glass-card absolute inset-0 z-[2] rounded-2xl p-8 flex flex-col justify-between transition-transform duration-500 ease-out group-hover:translate-y-[85%]" style={{ background: "linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 100%)", boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
-                <Image src="/streettalk-tutor.png" alt="Tutor DFN Street Talk" width={1028} height={1056} className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[55%] w-auto z-[1]" />
-                <div className="relative z-20" style={{ textShadow: "0 2px 12px rgba(255,255,255,0.8), 0 0 30px rgba(255,255,255,0.6)" }}>
-                  <h3 className="font-bold text-2xl" style={{ fontFamily: "var(--font-headline)", lineHeight: "1.5" }}>Street Talk</h3>
-                </div>
+              <div className="glass-card absolute inset-0 z-[2] rounded-2xl p-8 flex flex-col justify-between transition-transform duration-500 ease-out group-hover:translate-y-[85%]" style={{ background: "linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 100%)", boxShadow: "0 8px 30px rgba(0,0,0,0.25)", border: "2px solid #000" }}>
+                <Image src="/TUTOR_02.png" alt="Tutor DFN Street Talk" width={1028} height={1056} className="absolute left-1/2 -translate-x-1/2 w-[85%] h-auto z-[30] transition-transform duration-500 ease-out group-hover:-translate-y-[55%]" style={{ bottom: "-15%" }} />
                 <div className="relative z-20 mt-auto text-[#FF4500]" style={{ filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.15))" }}>
                   <MessageCircle size={36} />
                 </div>
               </div>
             </div>
             {/* Devotional */}
-            <div className="rounded-2xl group relative overflow-hidden cursor-pointer" style={{ height: "500px" }}>
-              <div className="absolute inset-0 z-[1] rounded-2xl flex flex-col justify-center items-center text-center p-8" style={{ background: "linear-gradient(180deg, #FF4500 0%, #CC3700 100%)" }}>
-                <h3 className="font-bold text-3xl mb-4 text-white" style={{ fontFamily: "var(--font-headline)", lineHeight: "1.5" }}>Devotional</h3>
-                <p className="text-white/90 font-medium max-w-[280px]" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4", fontSize: "1.05rem" }}>Vocabulário bíblico e teológico para pregar e orar com autoridade espiritual.</p>
-                <div className="mt-6 text-white/80">
-                  <BookOpen size={32} />
+            <div className="rounded-2xl group relative overflow-visible cursor-pointer" style={{ height: "500px" }}>
+              <div className="absolute inset-0 z-[1] rounded-2xl flex flex-col items-center text-center px-8 pt-10" style={{ background: "linear-gradient(180deg, #FF4500 0%, #CC3700 100%)" }}>
+                <div className="mb-3 text-white">
+                  <BookOpen size={28} />
                 </div>
+                <h3 className="font-bold text-2xl mb-2 text-white" style={{ fontFamily: "var(--font-headline)", lineHeight: "1.3" }}>Devotional</h3>
+                <p className="text-white/90 font-medium max-w-[260px] text-sm" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>Vocabulário bíblico e teológico para pregar e orar com autoridade espiritual.</p>
               </div>
-              <div className="glass-card absolute inset-0 z-[2] rounded-2xl p-8 flex flex-col justify-between transition-transform duration-500 ease-out group-hover:translate-y-[85%]" style={{ background: "linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 100%)", boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
-                <Image src="/devotional-tutor.png" alt="Tutor DFN Devotional" width={630} height={900} className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[55%] w-auto z-[1]" />
-                <div className="relative z-20" style={{ textShadow: "0 2px 12px rgba(255,255,255,0.8), 0 0 30px rgba(255,255,255,0.6)" }}>
-                  <h3 className="font-bold text-2xl" style={{ fontFamily: "var(--font-headline)", lineHeight: "1.5" }}>Devotional</h3>
-                </div>
+              <div className="glass-card absolute inset-0 z-[2] rounded-2xl p-8 flex flex-col justify-between transition-transform duration-500 ease-out group-hover:translate-y-[85%]" style={{ background: "linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 100%)", boxShadow: "0 8px 30px rgba(0,0,0,0.25)", border: "2px solid #000" }}>
+                <Image src="/TUTOR_04.png" alt="Tutor DFN Devotional" width={1028} height={1056} className="absolute left-1/2 -translate-x-1/2 w-[85%] h-auto z-[30] transition-transform duration-500 ease-out group-hover:-translate-y-[42%]" style={{ bottom: "-15%" }} />
                 <div className="relative z-20 mt-auto text-[#FF4500]" style={{ filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.15))" }}>
                   <BookOpen size={36} />
                 </div>
               </div>
             </div>
             {/* Boardroom */}
-            <div className="rounded-2xl group relative overflow-hidden cursor-pointer" style={{ height: "500px" }}>
-              <div className="absolute inset-0 z-[1] rounded-2xl flex flex-col justify-center items-center text-center p-8" style={{ background: "linear-gradient(180deg, #FF4500 0%, #CC3700 100%)" }}>
-                <h3 className="font-bold text-3xl mb-4 text-white" style={{ fontFamily: "var(--font-headline)", lineHeight: "1.5" }}>Boardroom</h3>
-                <p className="text-white/90 font-medium max-w-[280px]" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4", fontSize: "1.05rem" }}>Inglês executivo para reuniões, projetos e networking profissional global.</p>
-                <div className="mt-6 text-white/80">
-                  <Briefcase size={32} />
+            <div className="rounded-2xl group relative overflow-visible cursor-pointer" style={{ height: "500px" }}>
+              <div className="absolute inset-0 z-[1] rounded-2xl flex flex-col items-center text-center px-8 pt-10" style={{ background: "linear-gradient(180deg, #FF4500 0%, #CC3700 100%)" }}>
+                <div className="mb-3 text-white">
+                  <Briefcase size={28} />
                 </div>
+                <h3 className="font-bold text-2xl mb-2 text-white" style={{ fontFamily: "var(--font-headline)", lineHeight: "1.3" }}>Boardroom</h3>
+                <p className="text-white/90 font-medium max-w-[260px] text-sm" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>Inglês executivo para reuniões, projetos e networking profissional global.</p>
               </div>
-              <div className="glass-card absolute inset-0 z-[2] rounded-2xl p-8 flex flex-col justify-between transition-transform duration-500 ease-out group-hover:translate-y-[85%]" style={{ background: "linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 100%)", boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
-                <Image src="/boardroom-tutor.png" alt="Tutor DFN Boardroom" width={857} height={1306} className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[55%] w-auto z-[1]" />
-                <div className="relative z-20" style={{ textShadow: "0 2px 12px rgba(255,255,255,0.8), 0 0 30px rgba(255,255,255,0.6)" }}>
-                  <h3 className="font-bold text-2xl" style={{ fontFamily: "var(--font-headline)", lineHeight: "1.5" }}>Boardroom</h3>
-                </div>
+              <div className="glass-card absolute inset-0 z-[2] rounded-2xl p-8 flex flex-col justify-between transition-transform duration-500 ease-out group-hover:translate-y-[85%]" style={{ background: "linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 100%)", boxShadow: "0 8px 30px rgba(0,0,0,0.25)", border: "2px solid #000" }}>
+                <Image src="/TUTOR_03.png" alt="Tutor DFN Boardroom" width={1028} height={1056} className="absolute left-1/2 -translate-x-1/2 w-[85%] h-auto z-[30] transition-transform duration-500 ease-out group-hover:-translate-y-[50%]" style={{ bottom: "-15%" }} />
                 <div className="relative z-20 mt-auto text-[#FF4500]" style={{ filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.15))" }}>
                   <Briefcase size={36} />
                 </div>
