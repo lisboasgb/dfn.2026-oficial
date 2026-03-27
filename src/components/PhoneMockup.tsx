@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 
+const waveHeights = [7, 12, 5, 10, 14, 6, 11, 8, 13, 5, 9, 14, 6, 10, 7, 12, 8, 11, 5, 13];
+
 const chatVariants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.15, delayChildren: 0.1 } },
@@ -173,7 +175,7 @@ export default function PhoneMockup({ children, className = "" }: PhoneMockupPro
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="#54656F" className="shrink-0"><path d="M8 5v14l11-7z"/></svg>
                     <div className="flex items-center gap-[1px] flex-1">
                       {Array.from({ length: 20 }).map((_, i) => (
-                        <div key={i} className="w-[2.5px] rounded-full bg-[#6BC17F]" style={{ height: `${4 + Math.random() * 10}px` }} />
+                        <div key={i} className="w-[2.5px] rounded-full bg-[#6BC17F]" style={{ height: `${waveHeights[i]}px` }} />
                       ))}
                     </div>
                     <div className="w-7 h-7 rounded-full overflow-hidden shrink-0">
@@ -194,7 +196,7 @@ export default function PhoneMockup({ children, className = "" }: PhoneMockupPro
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="#54656F" className="shrink-0"><path d="M8 5v14l11-7z"/></svg>
                     <div className="flex items-center gap-[1px] flex-1">
                       {Array.from({ length: 20 }).map((_, i) => (
-                        <div key={i} className="w-[2.5px] rounded-full bg-[#8696A0]" style={{ height: `${4 + Math.random() * 10}px` }} />
+                        <div key={i} className="w-[2.5px] rounded-full bg-[#8696A0]" style={{ height: `${waveHeights[i]}px` }} />
                       ))}
                     </div>
                     <div className="w-7 h-7 rounded-full overflow-hidden shrink-0">

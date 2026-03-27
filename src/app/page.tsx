@@ -1,8 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { AnimateOnScroll } from "@/components/AnimateOnScroll";
 import PhoneMockup from "@/components/PhoneMockup";
+import { CountUp, AnimatedBar } from "@/components/CountUp";
+
+const waveHeights = [7, 12, 5, 10, 14, 6, 11, 8, 13, 5, 9, 14, 6, 10, 7, 12, 8, 11, 5, 13];
+const waveHeights2 = [9, 6, 13, 8, 11, 5, 14, 7, 10, 12, 6, 9, 13, 5, 11, 8, 14, 7, 12, 6];
 import {
   ArrowRight,
   Ban,
@@ -30,7 +35,7 @@ export default function Home() {
   return (
     <>
       {/* 1. Hero Section (Fundo Escuro) */}
-      <section className="relative pt-16 pb-20 md:pt-24 md:pb-40 bg-[#FDFCFB] dot-pattern overflow-hidden">
+      <section className="relative pt-16 pb-4 md:pt-24 md:pb-40 bg-[#FDFCFB] dot-pattern overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="flex flex-col items-center text-center md:items-start md:text-left">
             <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-black/15 bg-black/5 font-extrabold uppercase tracking-[0.15em] text-xs text-black" style={{ fontFamily: "var(--font-headline)" }}>
@@ -57,13 +62,12 @@ export default function Home() {
               Aprenda Inglês IA
             </div>
           </div>
-          <div className="relative flex justify-center">
-            <div className="absolute -inset-20 bg-[#FF4500]/10 rounded-full blur-3xl" />
+          <div className="relative flex justify-center -mt-24 md:mt-0">
             <Image
-              src="/tutor-prototipo.webp"
+              src="/tutor-hero-01.png"
               alt="Tutor DFN"
-              width={500}
-              height={500}
+              width={800}
+              height={1200}
               className="relative w-full max-w-[280px] sm:max-w-[340px] md:max-w-md h-auto drop-shadow-2xl"
               priority
             />
@@ -152,7 +156,7 @@ export default function Home() {
 
         {/* Texto transição + CTA — centralizado abaixo dos blocos */}
         <div className="flex flex-col items-center text-center mt-12" style={{ gap: "20px" }}>
-          <p className="text-[#FF4500] font-bold text-base sm:text-lg uppercase tracking-wider" style={{ fontFamily: "var(--font-headline)" }}>
+          <p className="text-white md:text-[#FF4500] font-bold text-base sm:text-lg uppercase tracking-wider" style={{ fontFamily: "var(--font-headline)" }}>
             O Tutor DFN resolve todos esses problemas
           </p>
           <a
@@ -183,21 +187,21 @@ export default function Home() {
           <h2 className="font-black text-black text-2xl sm:text-3xl md:text-6xl mb-8 leading-normal" style={{ fontFamily: "var(--font-headline)" }}>
             SEU TUTOR DE IA <span className="bg-[#FF4500] text-white px-3 py-1 sm:px-5 sm:py-2 ml-1 sm:ml-1.5 inline-block mt-1 sm:mt-0">NO WHATSAPP</span>
           </h2>
-          <p className="text-black/60 text-base sm:text-xl mb-12 md:mb-24 max-w-2xl font-medium" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>
+          <p className="text-black/60 text-base sm:text-xl mb-6 md:mb-24 max-w-2xl font-medium" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>
             O Tutor DFN é um assistente de conversação em inglês movido por inteligência artificial. Sem instalar app novo. Sem desculpa. Só você, o WhatsApp e 15 minutos por dia.
           </p>
 
           {/* Z-pattern list */}
-          <div className="space-y-16 md:space-y-32">
+          <div className="space-y-10 md:space-y-32">
             {/* Row 1: Text Left, Image Right */}
             <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start">
               <div className="pt-8 md:pt-16">
                 <div className="font-black text-3xl sm:text-5xl text-[#FF4500] mb-4 sm:mb-6" style={{ fontFamily: "var(--font-headline)" }}>01</div>
                 <h4 className="font-extrabold text-black text-xl sm:text-3xl mb-4 sm:mb-6" style={{ fontFamily: "var(--font-headline)", lineHeight: "1.5" }}>MANDE TEXTO OU ÁUDIO</h4>
                 <p className="text-black/60 text-lg leading-relaxed" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>
-                  Em inglês, no nível que você estiver. Pode errar. Pode travar. O tutor já espera isso e começa a trabalhar com o que você mandou.
+                  Em inglês, no <span className="text-[#FF4500] font-bold">nível que você estiver</span>. Pode errar. Pode travar. O tutor já espera isso e começa a trabalhar com o que você mandou.
                   <br /><br />
-                  Funciona com <strong className="text-black">mensagem de texto ou áudio gravado</strong>, você escolhe o que for mais fácil no momento.
+                  Funciona com <strong className="text-[#FF4500]">mensagem de texto ou áudio gravado</strong>, você escolhe o que for mais fácil no momento.
                 </p>
               </div>
               <div className="flex justify-center">
@@ -240,9 +244,9 @@ export default function Home() {
                 <div className="font-black text-3xl sm:text-5xl text-[#FF4500] mb-4 sm:mb-6" style={{ fontFamily: "var(--font-headline)" }}>02</div>
                 <h4 className="font-extrabold text-black text-xl sm:text-3xl mb-4 sm:mb-6" style={{ fontFamily: "var(--font-headline)", lineHeight: "1.5" }}>RECEBA CORREÇÃO E CONTINUE CONVERSANDO</h4>
                 <p className="text-black/60 text-lg leading-relaxed" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>
-                  O tutor identifica cada erro de gramática e vocabulário, explica em português o que estava errado e como corrigir.
+                  O tutor identifica cada erro de gramática e vocabulário, explica em português o que estava errado e <span className="text-[#FF4500] font-bold">como corrigir.</span>
                   <br /><br />
-                  Na sequência já manda a próxima pergunta para você continuar praticando. Nenhum erro passa. Nenhuma prática é interrompida.
+                  Na sequência já manda a próxima pergunta para você continuar praticando. Nenhum erro passa. <span className="text-[#FF4500] font-bold">Nenhuma prática é interrompida.</span>
                 </p>
               </div>
             </div>
@@ -255,7 +259,7 @@ export default function Home() {
                 <p className="text-black/60 text-lg leading-relaxed" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>
                   Depois de cada áudio, você recebe um scorecard visual com sua porcentagem de acerto, o que você disse e a forma correta.
                   <br /><br />
-                  A correção é feita em relação à sua pronúncia e à sua gramática aplicada. Verde, amarelo ou vermelho... Você sabe exatamente como está.
+                  A correção é feita em relação à sua pronúncia e à sua gramática aplicada. Verde, amarelo ou vermelho... <span className="text-[#FF4500] font-bold">Você sabe exatamente como está.</span>
                 </p>
               </div>
               <div className="flex justify-center">
@@ -267,7 +271,7 @@ export default function Home() {
                         <svg width="10" height="10" viewBox="0 0 24 24" fill="#54656F" className="shrink-0"><path d="M8 5v14l11-7z"/></svg>
                         <div className="flex items-center gap-[1px] flex-1">
                           {Array.from({ length: 20 }).map((_, i) => (
-                            <div key={`t3a${i}`} className="w-[2.5px] rounded-full bg-[#8696A0]" style={{ height: `${4 + Math.random() * 10}px` }} />
+                            <div key={`t3a${i}`} className="w-[2.5px] rounded-full bg-[#8696A0]" style={{ height: `${waveHeights[i]}px` }} />
                           ))}
                         </div>
                         <div className="w-7 h-7 rounded-full overflow-hidden shrink-0">
@@ -285,7 +289,7 @@ export default function Home() {
                         <svg width="10" height="10" viewBox="0 0 24 24" fill="#54656F" className="shrink-0"><path d="M8 5v14l11-7z"/></svg>
                         <div className="flex items-center gap-[1px] flex-1">
                           {Array.from({ length: 20 }).map((_, i) => (
-                            <div key={`a3a${i}`} className="w-[2.5px] rounded-full bg-[#6BC17F]" style={{ height: `${4 + Math.random() * 10}px` }} />
+                            <div key={`a3a${i}`} className="w-[2.5px] rounded-full bg-[#6BC17F]" style={{ height: `${waveHeights[i]}px` }} />
                           ))}
                         </div>
                         <div className="w-7 h-7 rounded-full overflow-hidden shrink-0">
@@ -363,7 +367,7 @@ export default function Home() {
                         <svg width="10" height="10" viewBox="0 0 24 24" fill="#54656F" className="shrink-0"><path d="M8 5v14l11-7z"/></svg>
                         <div className="flex items-center gap-[1px] flex-1">
                           {Array.from({ length: 20 }).map((_, i) => (
-                            <div key={`t4a${i}`} className="w-[2.5px] rounded-full bg-[#8696A0]" style={{ height: `${4 + Math.random() * 10}px` }} />
+                            <div key={`t4a${i}`} className="w-[2.5px] rounded-full bg-[#8696A0]" style={{ height: `${waveHeights[i]}px` }} />
                           ))}
                         </div>
                         <div className="w-7 h-7 rounded-full overflow-hidden shrink-0">
@@ -419,9 +423,9 @@ export default function Home() {
                 <div className="font-black text-3xl sm:text-5xl text-[#FF4500] mb-4 sm:mb-6" style={{ fontFamily: "var(--font-headline)" }}>04</div>
                 <h4 className="font-extrabold text-black text-xl sm:text-3xl mb-4 sm:mb-6" style={{ fontFamily: "var(--font-headline)", lineHeight: "1.5" }}>QUANDO TRAVAR, O TUTOR TE AJUDA</h4>
                 <p className="text-black/60 text-lg leading-relaxed" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>
-                  Não sabe como responder? Clica em &quot;Como responder?&quot; e recebe <strong className="text-black">3 sugestões</strong> de frases prontas para continuar a conversa.
+                  Não sabe como responder? Clica em &quot;Como responder?&quot; e receba <strong className="text-[#FF4500]">3 sugestões</strong> de frases prontas para continuar a conversa.
                   <br /><br />
-                  Não entendeu o áudio do tutor? Clica em &quot;Traduzir áudio&quot; e recebe a tradução na hora. Sem sair do WhatsApp.
+                  Não entendeu o áudio do tutor? Clica em &quot;Traduzir áudio&quot; e receba <span className="text-[#FF4500] font-bold">a tradução na hora.</span> Sem sair do WhatsApp.
                 </p>
               </div>
             </div>
@@ -459,13 +463,13 @@ export default function Home() {
             <h2 className="font-black text-xl sm:text-3xl md:text-5xl text-white mb-6 max-w-4xl mx-auto leading-normal px-2 sm:px-0" style={{ fontFamily: "var(--font-headline)" }}>
               CADA SESSÃO FECHA COM UM <span className="bg-[#FF4500] px-2 py-0.5 sm:px-3 sm:py-1 text-white inline-block mt-1 sm:mt-0">RELATÓRIO COMPLETO</span>
             </h2>
-            <p className="text-white/50 text-lg max-w-2xl mx-auto font-medium" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>
+            <p className="text-white/50 text-sm sm:text-base md:text-lg max-w-2xl mx-auto font-medium" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>
               Você precisa saber o que melhorou e o que ainda precisa de atenção. Só o Tutor DFN te entrega um ciclo exclusivo de análises ao final de cada sessão.
             </p>
           </div>
 
           {/* Top row cards with colored top borders */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 px-2 sm:px-0">
             {/* Card Parar (Red) */}
             <div className="bg-white/5 border border-white/10 p-8 rounded-2xl border-t-8 border-t-[#DC2626] hover:bg-white/10 transition-all duration-300">
               <div className="flex items-center gap-3 mb-6">
@@ -502,8 +506,9 @@ export default function Home() {
           </div>
 
           {/* Banner style blocks */}
-          <div className="space-y-6">
+          <div className="space-y-6 px-2 sm:px-0">
             {/* Resumo da Sessao */}
+            <AnimateOnScroll delay={0}>
             <div className="bg-white/5 text-white p-8 md:p-12 rounded-2xl flex flex-col md:flex-row items-center gap-8 border border-white/10">
               <div className="flex-1">
                 <div className="flex items-center gap-4 mb-4">
@@ -515,17 +520,19 @@ export default function Home() {
               <div className="w-full md:w-1/3 bg-white/10 p-6 rounded-xl border border-white/5">
                 <div className="flex justify-between items-center mb-4">
                   <span className="font-bold" style={{ fontFamily: "var(--font-body)" }}>Tempo</span>
-                  <span className="text-[#FF4500]" style={{ fontFamily: "var(--font-headline)" }}>24 min</span>
+                  <CountUp end={24} suffix=" min" className="text-[#FF4500] font-bold" style={{ fontFamily: "var(--font-headline)" }} />
                 </div>
                 <div className="h-3 w-full bg-white/10 rounded-full overflow-hidden mb-6">
-                  <div className="h-full bg-[#FF4500]" style={{ width: "75%" }} />
+                  <AnimatedBar width="75%" className="h-full bg-[#FF4500] rounded-full" />
                 </div>
-                <div className="text-center font-black text-4xl text-white" style={{ fontFamily: "var(--font-headline)" }}>+2.4k</div>
+                <div className="text-center font-black text-4xl text-white" style={{ fontFamily: "var(--font-headline)" }}>+<CountUp end={2.4} decimals={1} suffix="k" /></div>
                 <div className="text-center text-xs text-[#FF4500] font-bold uppercase tracking-widest mt-1" style={{ fontFamily: "var(--font-body)" }}>Palavras</div>
               </div>
             </div>
+            </AnimateOnScroll>
 
             {/* Sua Evolução */}
+            <AnimateOnScroll delay={1}>
             <div className="bg-white/5 text-white p-8 md:p-12 rounded-2xl flex flex-col md:flex-row items-center gap-8 border border-white/10">
               <div className="flex-1">
                 <div className="flex items-center gap-4 mb-4">
@@ -535,12 +542,14 @@ export default function Home() {
                 <p className="text-white/60 text-lg" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>Acesse a qualquer momento: sequência de dias, posição no ranking do mês, horas totais de prática e conquistas desbloqueadas.</p>
               </div>
               <div className="w-full md:w-1/3 bg-white/10 p-6 rounded-xl border border-white/5 flex flex-col items-center justify-center">
-                <div className="text-5xl font-black text-white" style={{ fontFamily: "var(--font-headline)" }}>5h</div>
+                <div className="text-5xl font-black text-white" style={{ fontFamily: "var(--font-headline)" }}><CountUp end={5} suffix="h" /></div>
                 <div className="text-xs uppercase mt-2 text-[#FF4500] font-bold tracking-widest" style={{ fontFamily: "var(--font-body)" }}>Próxima Conquista</div>
               </div>
             </div>
+            </AnimateOnScroll>
 
             {/* Revisao de Erros */}
+            <AnimateOnScroll delay={2}>
             <div className="bg-white/5 text-white p-8 md:p-12 rounded-2xl flex flex-col md:flex-row items-center gap-8 border border-white/10">
               <div className="flex-1">
                 <div className="flex items-center gap-4 mb-4">
@@ -555,10 +564,11 @@ export default function Home() {
                 <span className="bg-white/10 text-xs px-3 py-1.5 rounded-full font-medium italic border border-white/10 text-center" style={{ fontFamily: "var(--font-body)" }}>&quot;Pronunciation of World&quot;</span>
               </div>
             </div>
+            </AnimateOnScroll>
           </div>
 
           <div className="mt-20 text-center space-y-8">
-            <p className="text-white font-bold text-lg" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>Você já viu algum professor passando todas essas informações tão específicas?</p>
+            <p className="text-white font-bold text-sm sm:text-base md:text-lg px-4 sm:px-0" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>Você já viu algum professor passando todas essas informações tão específicas?</p>
             <a
               href="#precos"
               className="cta-btn cta-orange rounded-full py-3.5 px-8 sm:py-4 sm:px-12 text-lg sm:text-xl font-bold uppercase cursor-pointer"
@@ -580,20 +590,20 @@ export default function Home() {
       </div>
 
       {/* 6. Secao Modos de Pratica (Fundo Claro) */}
-      <section className="bg-[#FDFCFB] dot-pattern pt-16 pb-16 md:pt-24 md:pb-24 overflow-hidden relative">
+      <section className="bg-[#FDFCFB] dot-pattern pt-10 pb-6 md:pt-24 md:pb-24 overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10">
           <h2 className="font-extrabold text-black tracking-normal mb-8 sm:mb-16 text-center md:text-left md:whitespace-nowrap" style={{ fontFamily: "var(--font-headline)", fontSize: "clamp(1.4rem, 5vw, 3.5rem)" }}>
             PRATIQUE O INGLÊS QUE<br className="sm:hidden" /> VOCÊ VAI <span className="bg-[#FF4500] text-white px-2 py-0.5 sm:px-3 sm:py-1 inline-block mt-1 sm:mt-0">REALMENTE USAR</span>
           </h2>
-          {/* === MOBILE: cards compactos, texto sempre visível, fade-in no scroll === */}
-          <div className="flex flex-col gap-6 md:hidden">
+          {/* === MOBILE: cards empilhados com efeito sticky === */}
+          <div className="md:hidden" style={{ paddingBottom: "40px" }}>
             {[
-              { title: "Street Talk", desc: "Gírias, expressões e o ritmo real das conversas cotidianas nas nações.", img: "/TUTOR_02.png", icon: <MessageCircle size={28} />, delay: 0 },
-              { title: "Devotional", desc: "Vocabulário bíblico e teológico para pregar e orar com autoridade espiritual.", img: "/devotional-tutor.png", icon: <BookOpen size={28} />, delay: 1 },
-              { title: "Boardroom", desc: "Inglês executivo para reuniões, projetos e networking profissional global.", img: "/boardroom-tutor.png", icon: <Briefcase size={28} />, delay: 2 },
+              { title: "Street Talk", desc: "Gírias, expressões e o ritmo real das conversas cotidianas nas nações.", img: "/TUTOR_02.png", icon: <MessageCircle size={28} />, idx: 0 },
+              { title: "Devotional", desc: "Vocabulário bíblico e teológico para pregar e orar com autoridade espiritual.", img: "/TUTOR_04.png", icon: <BookOpen size={28} />, idx: 1 },
+              { title: "Boardroom", desc: "Inglês executivo para reuniões, projetos e networking profissional global.", img: "/TUTOR_03.png", icon: <Briefcase size={28} />, idx: 2 },
             ].map((card) => (
-              <AnimateOnScroll key={card.title} delay={card.delay}>
-                <div className="bg-white rounded-2xl overflow-hidden relative shadow-sm border border-black/5">
+              <div key={card.title} className="sticky px-4" style={{ top: `${120 + card.idx * 20}px`, zIndex: card.idx + 1, marginBottom: "40px" }}>
+                <div className="bg-white rounded-2xl overflow-hidden relative shadow-lg border border-black/5" style={{ boxShadow: "0 10px 40px rgba(0,0,0,0.12)" }}>
                   <div className="flex items-center gap-5 p-6 relative z-10">
                     <Image src={card.img} alt={`Tutor DFN ${card.title}`} width={120} height={120} className="w-20 h-20 object-contain flex-shrink-0" />
                     <div className="flex-1 min-w-0">
@@ -605,7 +615,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </AnimateOnScroll>
+              </div>
             ))}
           </div>
 
@@ -664,14 +674,14 @@ export default function Home() {
       </section>
 
       {/* 8. Tabela Comparativa (Fundo Claro) */}
-      <section className="bg-[#FDFCFB] py-12 md:py-16 dot-pattern">
+      <section className="bg-[#FDFCFB] py-6 md:py-16 dot-pattern">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <h2 className="font-extrabold text-xl sm:text-3xl md:text-5xl text-center mb-8 sm:mb-16 tracking-normal leading-normal" style={{ fontFamily: "var(--font-headline)" }}>
             NENHUM APP, ESCOLA OU PROFESSOR<br /><span className="bg-[#FF4500] text-white px-3 py-1 inline-block mt-2">FAZ O QUE O TUTOR DFN FAZ</span>
 
           </h2>
           {/* === MOBILE: cards comparativos empilhados === */}
-          <div className="flex flex-col gap-4 md:hidden">
+          <div className="flex flex-col gap-4 md:hidden px-2">
             {[
               { recurso: "IA com Contexto de Reino", dfn: true, trad: false, apps: false },
               { recurso: "Conversação Ilimitada 24/7", dfn: true, trad: false, apps: false },
@@ -761,52 +771,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ticker: Comparativo → Depoimentos */}
-      <div className="bg-[#FF4500] ticker-wrap" style={{ paddingTop: "5px", paddingBottom: "5px" }}>
-        <div className="ticker-move">
-          {Array.from({ length: 8 }).map((_, i) => (
-            <span key={i} className="font-black text-white uppercase mx-3" style={{ fontFamily: "var(--font-headline)", fontSize: "clamp(0.95rem, 2.3vw, 1.58rem)" }}>Quem já usou aprova &bull; Veja os depoimentos &bull; </span>
-          ))}
-        </div>
-      </div>
-
       {/* 9. Depoimentos (Fundo Escuro) */}
-      <section className="bg-black py-24 relative">
-        <div className="orange-glow" aria-hidden="true" />
+      <section className="bg-[#FDFCFB] dot-pattern py-16 md:py-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10">
-          <h2 className="font-extrabold text-2xl sm:text-4xl md:text-5xl text-white mb-8 sm:mb-16 tracking-normal text-center md:text-left" style={{ fontFamily: "var(--font-headline)" }}>
+          <h2 className="font-extrabold text-2xl sm:text-4xl md:text-5xl text-black mb-8 sm:mb-16 tracking-normal text-center" style={{ fontFamily: "var(--font-headline)" }}>
             NÃO É O QUE A GENTE DIZ.<br /><span className="text-[#FF4500]">É O QUE ELES VIVERAM.</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Testimonial 1 */}
-            <div className="glass-card p-8 rounded-2xl flex flex-col justify-between" style={{ borderLeft: "4px solid #FF4500" }}>
-              <p className="text-white/80 italic mb-8" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>&quot;O Tutor DFN me deu a confiança que faltava para pregar em uma conferência na África do Sul. A IA entende os termos bíblicos melhor que qualquer professor que já tive.&quot;</p>
+            <div className="bg-white p-8 rounded-2xl flex flex-col justify-between shadow-sm border border-black/5" style={{ borderLeft: "4px solid #FF4500" }}>
+              <p className="text-black/70 italic mb-8" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>&quot;O Tutor DFN me deu a confiança que faltava para pregar em uma conferência na África do Sul. A IA entende os termos bíblicos melhor que qualquer professor que já tive.&quot;</p>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-[#FF4500]/30 flex items-center justify-center text-white font-bold" style={{ fontFamily: "var(--font-headline)" }}>RS</div>
+                <div className="w-12 h-12 rounded-full bg-[#FF4500]/15 flex items-center justify-center text-[#FF4500] font-bold" style={{ fontFamily: "var(--font-headline)" }}>RS</div>
                 <div>
-                  <p className="font-bold text-white" style={{ fontFamily: "var(--font-body)" }}>Pr. Ricardo Silva</p>
+                  <p className="font-bold text-black" style={{ fontFamily: "var(--font-body)" }}>Pr. Ricardo Silva</p>
                   <p className="text-xs text-[#FF4500] font-bold uppercase tracking-widest" style={{ fontFamily: "var(--font-label)" }}>Missão Global</p>
                 </div>
               </div>
             </div>
             {/* Testimonial 2 */}
-            <div className="glass-card p-8 rounded-2xl flex flex-col justify-between" style={{ borderLeft: "4px solid #FF4500" }}>
-              <p className="text-white/80 italic mb-8" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>&quot;Estudar inglês sempre foi um peso, mas com os cenários de Boardroom eu finalmente consegui me comunicar com parceiros internacionais do meu ministério.&quot;</p>
+            <div className="bg-white p-8 rounded-2xl flex flex-col justify-between shadow-sm border border-black/5" style={{ borderLeft: "4px solid #FF4500" }}>
+              <p className="text-black/70 italic mb-8" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>&quot;Estudar inglês sempre foi um peso, mas com os cenários de Boardroom eu finalmente consegui me comunicar com parceiros internacionais do meu ministério.&quot;</p>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-[#FF4500]/30 flex items-center justify-center text-white font-bold" style={{ fontFamily: "var(--font-headline)" }}>AM</div>
+                <div className="w-12 h-12 rounded-full bg-[#FF4500]/15 flex items-center justify-center text-[#FF4500] font-bold" style={{ fontFamily: "var(--font-headline)" }}>AM</div>
                 <div>
-                  <p className="font-bold text-white" style={{ fontFamily: "var(--font-body)" }}>Ana Luiza Mello</p>
+                  <p className="font-bold text-black" style={{ fontFamily: "var(--font-body)" }}>Ana Luiza Mello</p>
                   <p className="text-xs text-[#FF4500] font-bold uppercase tracking-widest" style={{ fontFamily: "var(--font-label)" }}>Coordenadora de Projetos</p>
                 </div>
               </div>
             </div>
             {/* Testimonial 3 */}
-            <div className="glass-card p-8 rounded-2xl flex flex-col justify-between" style={{ borderLeft: "4px solid #FF4500" }}>
-              <p className="text-white/80 italic mb-8" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>&quot;Uso o Street Talk todos os dias antes de sair para o campo. É como ter um amigo nativo te dando dicas reais de como as pessoas falam na rua.&quot;</p>
+            <div className="bg-white p-8 rounded-2xl flex flex-col justify-between shadow-sm border border-black/5" style={{ borderLeft: "4px solid #FF4500" }}>
+              <p className="text-black/70 italic mb-8" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>&quot;Uso o Street Talk todos os dias antes de sair para o campo. É como ter um amigo nativo te dando dicas reais de como as pessoas falam na rua.&quot;</p>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-[#FF4500]/30 flex items-center justify-center text-white font-bold" style={{ fontFamily: "var(--font-headline)" }}>GS</div>
+                <div className="w-12 h-12 rounded-full bg-[#FF4500]/15 flex items-center justify-center text-[#FF4500] font-bold" style={{ fontFamily: "var(--font-headline)" }}>GS</div>
                 <div>
-                  <p className="font-bold text-white" style={{ fontFamily: "var(--font-body)" }}>Gabriel Santos</p>
+                  <p className="font-bold text-black" style={{ fontFamily: "var(--font-body)" }}>Gabriel Santos</p>
                   <p className="text-xs text-[#FF4500] font-bold uppercase tracking-widest" style={{ fontFamily: "var(--font-label)" }}>Missionário de Campo</p>
                 </div>
               </div>
@@ -815,26 +815,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ticker: Depoimentos → Pricing */}
-      <div className="bg-[#FF4500] ticker-wrap" style={{ paddingTop: "5px", paddingBottom: "5px" }}>
-        <div className="ticker-move">
-          {Array.from({ length: 8 }).map((_, i) => (
-            <span key={i} className="font-black text-white uppercase mx-3" style={{ fontFamily: "var(--font-headline)", fontSize: "clamp(0.95rem, 2.3vw, 1.58rem)" }}>1 ano completo &bull; 12x de R$ 59,70 &bull; Acesso imediato &bull; </span>
-          ))}
-        </div>
-      </div>
-
       {/* 10. Oferta/Pricing (Fundo Claro) */}
-      <section className="bg-[#FDFCFB] py-16 md:py-24 relative overflow-hidden">
+      <section className="bg-[#FDFCFB] dot-pattern py-16 md:py-24 relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-6 sm:px-8 md:px-12">
           <div className="flex flex-col lg:flex-row gap-8 md:gap-16 items-center">
-            <div className="lg:w-1/2">
+            <div className="lg:w-1/2 px-2 sm:px-0">
               <div className="text-center md:text-left"><span className="bg-[#FF4500]/10 text-[#FF4500] px-4 py-2 rounded-full font-bold text-xs uppercase tracking-widest mb-6 inline-block" style={{ fontFamily: "var(--font-label)" }}>Acesso Anual</span></div>
-              <h2 className="font-extrabold tracking-normal mb-6 sm:mb-8 text-center md:text-left" style={{ fontFamily: "var(--font-headline)", fontSize: "clamp(1.25rem, 4vw, 3rem)", lineHeight: "1.2" }}>
+              <h2 className="font-extrabold tracking-normal mb-6 sm:mb-8 text-center md:text-left" style={{ fontFamily: "var(--font-headline)", fontSize: "clamp(1.15rem, 4vw, 3rem)", lineHeight: "1.2" }}>
                 UM ANO INTEIRO DO TUTOR DFN.<br />
-                <span className="text-[#FF4500]" style={{ fontSize: "clamp(1.4rem, 4.5vw, 3.8rem)" }}>POR MENOS DO QUE UMA AULA PARTICULAR.</span>
+                <span className="text-[#FF4500]" style={{ fontSize: "clamp(1.25rem, 4.5vw, 3.8rem)" }}>POR MENOS DO QUE UMA AULA PARTICULAR.</span>
               </h2>
-              <ul className="space-y-4">
+              <ul className="space-y-4 text-sm sm:text-base">
                 <li className="flex items-center gap-3">
                   <Check className="text-[#FF4500]" size={20} />
                   <span className="font-medium" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>Acesso ilimitado 24h por dia</span>
@@ -865,7 +856,7 @@ export default function Home() {
                   <span className="text-2xl font-bold" style={{ fontFamily: "var(--font-body)" }}>12x de</span>
                   <span className="text-4xl sm:text-6xl font-black text-[#FF4500] tracking-normal" style={{ fontFamily: "var(--font-headline)" }}>R$ 59,70</span>
                 </div>
-                <p className="text-[#6B7280]/70 mb-8 font-medium" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>Ou R$ 597 à vista (economize R$ 119)</p>
+                <p className="text-[#6B7280]/70 mb-8 font-medium whitespace-nowrap text-sm sm:text-base" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>Ou R$ 597 à vista (economize R$ 119)</p>
                 <a
                   href="#"
                   className="cta-btn cta-green animate-pulse-cta block w-full text-center py-4 rounded-xl font-bold text-lg sm:text-xl uppercase mb-6 cursor-pointer"
@@ -887,7 +878,7 @@ export default function Home() {
       <div className="bg-[#FF4500] ticker-wrap" style={{ paddingTop: "5px", paddingBottom: "5px" }}>
         <div className="ticker-move">
           {Array.from({ length: 8 }).map((_, i) => (
-            <span key={i} className="font-black text-white uppercase mx-3" style={{ fontFamily: "var(--font-headline)", fontSize: "clamp(0.95rem, 2.3vw, 1.58rem)" }}>7 dias de garantia &bull; Sem risco &bull; 100% do seu dinheiro de volta &bull; </span>
+            <span key={i} className="font-black text-white uppercase mx-3" style={{ fontFamily: "var(--font-headline)", fontSize: "clamp(0.95rem, 2.3vw, 1.58rem)" }}><span className="text-[#FF4500]">7 dias</span> de garantia &bull; Sem risco &bull; 100% do seu dinheiro de volta &bull;</span>
           ))}
         </div>
       </div>
@@ -898,10 +889,8 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
           {/* Guarantee Card */}
           <div className="glass-card rounded-2xl p-5 sm:p-8 mb-12 md:mb-24 flex flex-col md:flex-row items-center gap-6 sm:gap-8" style={{ borderColor: "rgba(173,44,0,0.2)" }}>
-            <div className="w-20 h-20 sm:w-32 sm:h-32 flex-shrink-0">
-              <div className="w-full h-full bg-[#FF4500] rounded-full flex items-center justify-center" style={{ boxShadow: "0 0 50px rgba(173,44,0,0.5)" }}>
-                <ShieldCheck className="text-white" size={56} />
-              </div>
+            <div className="w-24 h-24 sm:w-36 sm:h-36 flex-shrink-0">
+              <Image src="/garantia-7dias.png" alt="Garantia 7 dias" width={150} height={150} className="w-full h-full object-contain" />
             </div>
             <div>
               <h3 className="font-bold text-2xl mb-4 text-center md:text-left" style={{ fontFamily: "var(--font-headline)", lineHeight: "1.5" }}>Garantia Incondicional de 7 Dias</h3>
@@ -1006,48 +995,51 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 12. CTA Final (Extreme Glow) */}
-      <section className="bg-black py-32 relative overflow-hidden text-center">
-        <div className="orange-glow" aria-hidden="true" />
-        <div
-          className="absolute inset-0 bg-center bg-no-repeat bg-contain opacity-60 pointer-events-none"
-          style={{ backgroundImage: "url('/mundo.svg')", backgroundSize: "cover" }}
-          aria-hidden="true"
-        />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
-          <h2 className="font-extrabold text-3xl sm:text-5xl md:text-7xl tracking-normal text-white mb-8 sm:mb-12 leading-none" style={{ fontFamily: "var(--font-headline)" }}>
-            QUAL NAÇÃO QUEIMA EM SEU CORAÇÃO?
-          </h2>
-          <p className="text-white/70 text-lg md:text-xl mb-12 max-w-2xl mx-auto font-medium" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>
-            Não deixe a barreira do idioma ser o limite para o que Deus quer fazer através de você. Comece sua jornada agora.
-          </p>
-          <div className="flex flex-col items-center gap-6">
-            <a
-              href="#precos"
-              className="cta-btn cta-orange animate-pulse-cta py-4 px-8 sm:py-5 sm:px-14 rounded-xl text-lg sm:text-xl font-bold uppercase cursor-pointer"
-              style={{ fontFamily: "var(--font-headline)" }}
-            >
-              Destravar Minha Fluência
-            </a>
-            <p className="text-xs font-bold text-white/30 uppercase" style={{ fontFamily: "var(--font-label)", letterSpacing: "0.2em" }}>Vagas limitadas para a turma atual</p>
-          </div>
-        </div>
-      </section>
+      {/* 12. CTA Final + Footer wrapper com world-map contínuo */}
+      <div className="relative overflow-hidden" style={{ marginTop: "-1px", backgroundImage: "url('/world-map.png')", backgroundSize: "cover", backgroundPosition: "center" }}>
+        {/* Overlay escuro */}
+        <div className="absolute inset-0 z-0" style={{ background: "rgba(0,0,0,0.55)" }} />
+        {/* Gradiente topo para transição suave */}
+        <div className="absolute top-0 left-0 right-0 h-24 z-[2] pointer-events-none" style={{ background: "linear-gradient(to bottom, #000 0%, transparent 100%)" }} />
 
-      {/* Footer */}
-      <footer className="bg-black w-full py-8 sm:py-12 px-4 sm:px-6 md:px-12 border-t border-white/5">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6 max-w-7xl mx-auto">
-          <div className="text-xl font-bold text-white" style={{ fontFamily: "var(--font-headline)" }}>Tutor DFN</div>
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-8">
-            <a href="#" className="text-sm text-white/50 hover:text-white transition-colors" style={{ fontFamily: "var(--font-body)" }}>Termos de Uso</a>
-            <a href="#" className="text-sm text-white/50 hover:text-white transition-colors" style={{ fontFamily: "var(--font-body)" }}>Política de Privacidade</a>
-            <a href="#" className="text-sm text-white/50 hover:text-[#2DD4A0] transition-colors" style={{ fontFamily: "var(--font-body)" }}>Suporte WhatsApp</a>
+        {/* CTA Final */}
+        <section className="py-32 relative z-[1] overflow-hidden text-center">
+          <div className="orange-glow" aria-hidden="true" />
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-[1]">
+            <h2 className="font-extrabold text-3xl sm:text-5xl md:text-7xl tracking-normal text-white mb-8 sm:mb-12 leading-none" style={{ fontFamily: "var(--font-headline)" }}>
+              QUAL NAÇÃO QUEIMA EM SEU CORAÇÃO?
+            </h2>
+            <p className="text-white/70 text-lg md:text-xl mb-12 max-w-2xl mx-auto font-medium" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>
+              Não deixe a barreira do idioma ser o limite para o que Deus quer fazer através de você. Comece sua jornada agora.
+            </p>
+            <div className="flex flex-col items-center gap-6">
+              <a
+                href="#precos"
+                className="cta-btn cta-orange animate-pulse-cta py-4 px-8 sm:py-5 sm:px-14 rounded-xl text-lg sm:text-xl font-bold uppercase cursor-pointer"
+                style={{ fontFamily: "var(--font-headline)" }}
+              >
+                Destravar Minha Fluência
+              </a>
+              <p className="text-xs font-bold text-white/30 uppercase" style={{ fontFamily: "var(--font-label)", letterSpacing: "0.2em" }}>Vagas limitadas para a turma atual</p>
+            </div>
           </div>
-          <div className="text-sm text-white/50 text-center md:text-right" style={{ fontFamily: "var(--font-body)" }}>
-            &copy; 2024 Destra For The Nations. Todos os direitos reservados.
+        </section>
+
+        {/* Footer */}
+        <footer className="w-full py-8 sm:py-12 px-4 sm:px-6 md:px-12 relative z-[1] border-t border-white/10">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6 max-w-7xl mx-auto">
+            <div className="text-xl font-bold text-white" style={{ fontFamily: "var(--font-headline)" }}>Tutor DFN</div>
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-8">
+              <a href="#" className="text-sm text-white/50 hover:text-white transition-colors" style={{ fontFamily: "var(--font-body)" }}>Termos de Uso</a>
+              <a href="#" className="text-sm text-white/50 hover:text-white transition-colors" style={{ fontFamily: "var(--font-body)" }}>Política de Privacidade</a>
+              <a href="#" className="text-sm text-white/50 hover:text-[#2DD4A0] transition-colors" style={{ fontFamily: "var(--font-body)" }}>Suporte WhatsApp</a>
+            </div>
+            <div className="text-sm text-white/50 text-center md:text-right" style={{ fontFamily: "var(--font-body)" }}>
+              &copy; 2024 Destra For The Nations. Todos os direitos reservados.
+            </div>
           </div>
-        </div>
-      </footer>
+        </footer>
+      </div>
     </>
   );
 }
