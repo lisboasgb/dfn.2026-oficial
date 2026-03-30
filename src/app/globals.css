@@ -452,7 +452,82 @@ section[class*="bg-black"]::before {
 }
 
 /* ===== SCROLLBAR ===== */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #1a1c1c; }
-::-webkit-scrollbar-thumb { background: #FF4500; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #E03D00; }
+
+/* Scrollbar: aparece só ao rolar */
+html {
+  overflow-y: overlay;
+  scrollbar-gutter: stable;
+}
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+body:hover::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+}
+body::-webkit-scrollbar-thumb:active {
+  background: rgba(0,0,0,0.4);
+}
+
+/* Hide scrollbar for carousels */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Testimonials marquee */
+@keyframes testimonials-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.testimonials-scroll {
+  animation: testimonials-scroll 14s linear infinite;
+}
+
+@keyframes cardLeap {
+  0% {
+    transform: translate(var(--from-x), var(--from-y)) scale(0.7);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* FAQ: hover open desktop */
+@media (hover: hover) and (min-width: 768px) {
+  .faq-item:hover .faq-content {
+    max-height: 300px;
+    padding-top: 0;
+    padding-bottom: 1.5rem;
+    opacity: 1;
+  }
+  .faq-item:hover .faq-chevron {
+    transform: rotate(180deg);
+  }
+}
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+}
+.faq-item[data-open="true"] .faq-content {
+  max-height: 300px;
+  opacity: 1;
+}
