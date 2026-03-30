@@ -79,7 +79,7 @@ export default function Home() {
       {/* Ticker: Hero → Problema */}
       <div className="relative z-[2] bg-[#FF4500] ticker-wrap" style={{ paddingTop: "5px", paddingBottom: "5px" }}>
         <div className="ticker-move">
-          {Array.from({ length: 8 }).map((_, i) => (
+          {Array.from({ length: 20 }).map((_, i) => (
             <span key={i} className="font-black text-white uppercase mx-3" style={{ fontFamily: "var(--font-headline)", fontSize: "clamp(1.5rem, 3.5vw, 1.8rem)" }}>Tutor DFN &bull; Aprenda Inglês Falando &bull; </span>
           ))}
         </div>
@@ -176,7 +176,7 @@ export default function Home() {
       {/* Ticker: Problema → O que é */}
       <div className="relative z-[2] bg-[#FF4500] ticker-wrap" style={{ paddingTop: "5px", paddingBottom: "5px" }}>
         <div className="ticker-move">
-          {Array.from({ length: 8 }).map((_, i) => (
+          {Array.from({ length: 20 }).map((_, i) => (
             <span key={i} className="font-black text-white uppercase mx-3" style={{ fontFamily: "var(--font-headline)", fontSize: "clamp(1.5rem, 3.5vw, 1.8rem)" }}>Seu Tutor de IA no WhatsApp &bull; 15 minutos por dia &bull; </span>
           ))}
         </div>
@@ -280,7 +280,7 @@ export default function Home() {
       {/* Ticker: O que e → Relatório */}
       <div className="relative z-[2] bg-[#FF4500] ticker-wrap" style={{ paddingTop: "5px", paddingBottom: "5px" }}>
         <div className="ticker-move">
-          {Array.from({ length: 8 }).map((_, i) => (
+          {Array.from({ length: 20 }).map((_, i) => (
             <span key={i} className="font-black text-white uppercase mx-3" style={{ fontFamily: "var(--font-headline)", fontSize: "clamp(1.5rem, 3.5vw, 1.8rem)" }}>Correção em tempo real &bull; Relatório completo &bull; </span>
           ))}
         </div>
@@ -417,7 +417,7 @@ export default function Home() {
       {/* Ticker: Relatório → Modos de Pratica */}
       <div className="bg-[#FF4500] ticker-wrap" style={{ paddingTop: "5px", paddingBottom: "5px" }}>
         <div className="ticker-move">
-          {Array.from({ length: 8 }).map((_, i) => (
+          {Array.from({ length: 20 }).map((_, i) => (
             <span key={i} className="font-black text-white uppercase mx-3" style={{ fontFamily: "var(--font-headline)", fontSize: "clamp(1.5rem, 3.5vw, 1.8rem)" }}>Street Talk &bull; Devotional &bull; Boardroom &bull; </span>
           ))}
         </div>
@@ -696,7 +696,7 @@ export default function Home() {
       {/* Ticker: Pricing → Garantia+FAQ */}
       <div className="relative z-[2] bg-[#FF4500] ticker-wrap" style={{ paddingTop: "5px", paddingBottom: "5px" }}>
         <div className="ticker-move">
-          {Array.from({ length: 8 }).map((_, i) => (
+          {Array.from({ length: 20 }).map((_, i) => (
             <span key={i} className="font-black text-white uppercase mx-3" style={{ fontFamily: "var(--font-headline)", fontSize: "clamp(1.5rem, 3.5vw, 1.8rem)" }}><span className="text-[#FF4500]">7 dias</span> de garantia &bull; Sem risco &bull; 100% do seu dinheiro de volta &bull;</span>
           ))}
         </div>
