@@ -7,6 +7,7 @@ import PhoneMockup from "@/components/PhoneMockup";
 import { CountUp, AnimatedBar } from "@/components/CountUp";
 import { FAQItem } from "@/components/FAQItem";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
+import StickySection from "@/components/StickySection";
 
 const waveHeights = [7, 12, 5, 10, 14, 6, 11, 8, 13, 5, 9, 14, 6, 10, 7, 12, 8, 11, 5, 13];
 const waveHeights2 = [9, 6, 13, 8, 11, 5, 14, 7, 10, 12, 6, 9, 13, 5, 11, 8, 14, 7, 12, 6];
@@ -36,54 +37,59 @@ import {
 export default function Home() {
   return (
     <>
+      <div className="bg-[#FF4500] py-2 flex items-center justify-center gap-2">
+        <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+        <span className="text-white font-extrabold uppercase tracking-[0.15em] text-base sm:text-sm" style={{ fontFamily: "var(--font-headline)" }}>Disponível direto no WhatsApp</span>
+      </div>
+      {/* Wrapper sticky: Hero fica fixa, Ticker+Problema sobem por cima */}
+      <div className="relative">
       {/* 1. Hero Section (Fundo Escuro) */}
-      <section className="relative bg-[#FDFCFB] dot-pattern overflow-hidden" style={{ padding: "8px 0 32px" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div className="flex flex-col gap-4 items-center text-center md:items-start md:text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-black/15 bg-black/5 font-extrabold uppercase tracking-[0.15em] text-xs text-black" style={{ fontFamily: "var(--font-headline)" }}>
-              <span className="w-2 h-2 rounded-full bg-[#FF4500] animate-pulse" />
-              Disponível direto no WhatsApp
-            </div>
-            <h1 className="font-black text-black tracking-normal" style={{ fontFamily: "var(--font-headline)", lineHeight: "1.15", fontSize: "clamp(1.75rem, 7vw, 5rem)" }}>
+      <section className="sticky top-0 z-[1] relative bg-[#FDFCFB] dot-pattern overflow-hidden" style={{ padding: "12px 0 0" }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10 grid md:grid-cols-2 gap-4 md:gap-12 items-center">
+          <div className="flex flex-col gap-2 sm:gap-4 items-center text-center md:items-start md:text-left">
+            <h1 className="font-black text-black tracking-normal" style={{ fontFamily: "var(--font-headline)", lineHeight: "1.1", fontSize: "clamp(1.6rem, 7vw, 5rem)" }}>
               APRENDA INGLÊS FALANDO<br /> <span className="bg-[#FF4500] text-white px-2 py-0.5 sm:px-3 sm:py-1 inline-block">DESDE O PRIMEIRO DIA</span>
             </h1>
-            <p className="text-black/60 text-base sm:text-lg md:text-xl max-w-lg font-bold" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>
+            <p className="text-black/60 text-sm sm:text-lg md:text-xl max-w-lg font-bold" style={{ fontFamily: "var(--font-body)", lineHeight: "1.3" }}>
               Pratique inglês de <span className="text-[#FF4500]">verdade</span><br />
               Com o único <span className="text-[#FF4500]">Tutor</span> que não te deixa travado<br />
               <span className="text-[#FF4500]">Corrigindo</span> e ensinando em tempo real
             </p>
             <a
               href="#precos"
-              className="cta-btn cta-green block w-full max-w-xs sm:max-w-sm text-center py-4 rounded-xl font-bold text-lg sm:text-xl uppercase cursor-pointer"
+              className="cta-btn cta-green block w-full max-w-xs sm:max-w-sm text-center py-3 sm:py-4 rounded-xl font-bold text-xl sm:text-xl uppercase cursor-pointer"
               style={{ fontFamily: "var(--font-headline)" }}
             >
               QUERO O TUTOR DFN
             </a>
-            <div className="text-black/30 font-bold text-xs uppercase tracking-widest" style={{ fontFamily: "var(--font-headline)" }}>
+            <div className="text-black/30 font-bold text-[10px] sm:text-xs uppercase tracking-widest" style={{ fontFamily: "var(--font-headline)" }}>
               Aprenda Inglês IA
             </div>
           </div>
-          <div className="relative flex justify-center items-center -mt-12 md:mt-0">
+          <div className="relative flex justify-center items-center -mt-6 md:mt-0">
             <img
               src="/Tutor_DFN2.webp"
               alt="Tutor DFN"
-              className="relative w-full max-w-[240px] sm:max-w-[300px] md:max-w-[420px] h-auto drop-shadow-2xl"
+              className="relative w-full max-w-[200px] sm:max-w-[300px] md:max-w-[420px] h-auto drop-shadow-2xl"
             />
           </div>
         </div>
       </section>
 
       {/* Ticker: Hero → Problema */}
-      <div className="bg-[#FF4500] ticker-wrap" style={{ paddingTop: "5px", paddingBottom: "5px" }}>
+      <div className="relative z-[2] bg-[#FF4500] ticker-wrap" style={{ paddingTop: "5px", paddingBottom: "5px" }}>
         <div className="ticker-move">
           {Array.from({ length: 8 }).map((_, i) => (
-            <span key={i} className="font-black text-white uppercase mx-3" style={{ fontFamily: "var(--font-headline)", fontSize: "clamp(0.95rem, 2.3vw, 1.58rem)" }}>Tutor DFN &bull; Aprenda Inglês Falando &bull; </span>
+            <span key={i} className="font-black text-white uppercase mx-3" style={{ fontFamily: "var(--font-headline)", fontSize: "clamp(1.5rem, 3.5vw, 1.8rem)" }}>Tutor DFN &bull; Aprenda Inglês Falando &bull; </span>
           ))}
         </div>
       </div>
 
+      </div>{/* Fim wrapper sticky Hero */}
+
       {/* 3. Secao Problema (Fundo Escuro) */}
-      <section className="relative bg-black overflow-hidden" style={{ paddingTop: "clamp(48px, 8vw, 96px)", paddingBottom: "clamp(48px, 8vw, 96px)" }}>
+      <div className="relative">
+      <StickySection zIndex={1} as="section" className="relative bg-black overflow-hidden" style={{ paddingTop: "clamp(48px, 8vw, 96px)", paddingBottom: "clamp(48px, 8vw, 96px)" }}>
         <div className="orange-glow" aria-hidden="true" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Coluna esquerda — Headline */}
@@ -165,19 +171,22 @@ export default function Home() {
             QUERO O TUTOR DFN <ArrowRight className="inline ml-2" size={22} />
           </a>
         </div>
-      </section>
+      </StickySection>
 
       {/* Ticker: Problema → O que é */}
-      <div className="bg-[#FF4500] ticker-wrap" style={{ paddingTop: "5px", paddingBottom: "5px" }}>
+      <div className="relative z-[2] bg-[#FF4500] ticker-wrap" style={{ paddingTop: "5px", paddingBottom: "5px" }}>
         <div className="ticker-move">
           {Array.from({ length: 8 }).map((_, i) => (
-            <span key={i} className="font-black text-white uppercase mx-3" style={{ fontFamily: "var(--font-headline)", fontSize: "clamp(0.95rem, 2.3vw, 1.58rem)" }}>Seu Tutor de IA no WhatsApp &bull; 15 minutos por dia &bull; </span>
+            <span key={i} className="font-black text-white uppercase mx-3" style={{ fontFamily: "var(--font-headline)", fontSize: "clamp(1.5rem, 3.5vw, 1.8rem)" }}>Seu Tutor de IA no WhatsApp &bull; 15 minutos por dia &bull; </span>
           ))}
         </div>
       </div>
 
+      </div>{/* Fim wrapper sticky Problema */}
+
       {/* 4. Secao O que e o Tutor DFN (Fundo Claro) - Z-pattern */}
-      <section className="relative py-24 md:py-32 bg-[#FDFCFB] dot-pattern overflow-hidden">
+      <div className="relative">
+      <StickySection zIndex={1} as="section" className="relative py-24 md:py-32 bg-[#FDFCFB] dot-pattern overflow-hidden">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 relative z-10">
           <div className="inline-block mb-6 px-4 py-1.5 rounded-full bg-black/5 border border-black/10 font-extrabold uppercase tracking-[0.15em] text-xs text-black" style={{ fontFamily: "var(--font-headline)" }}>
             O QUE É O TUTOR DFN
@@ -259,26 +268,26 @@ export default function Home() {
           <div className="mt-24 flex justify-center">
             <a
               href="#precos"
-              className="cta-btn cta-green rounded-full py-3.5 px-8 sm:py-4 sm:px-12 text-lg sm:text-xl font-bold uppercase cursor-pointer"
+              className="cta-btn cta-green rounded-full py-3.5 px-8 sm:py-4 sm:px-12 text-4xl sm:text-xl font-bold uppercase cursor-pointer"
               style={{ fontFamily: "var(--font-headline)" }}
             >
               QUERO O TUTOR DFN
             </a>
           </div>
         </div>
-      </section>
+      </StickySection>
 
       {/* Ticker: O que e → Relatório */}
-      <div className="bg-[#FF4500] ticker-wrap" style={{ paddingTop: "5px", paddingBottom: "5px" }}>
+      <div className="relative z-[2] bg-[#FF4500] ticker-wrap" style={{ paddingTop: "5px", paddingBottom: "5px" }}>
         <div className="ticker-move">
           {Array.from({ length: 8 }).map((_, i) => (
-            <span key={i} className="font-black text-white uppercase mx-3" style={{ fontFamily: "var(--font-headline)", fontSize: "clamp(0.95rem, 2.3vw, 1.58rem)" }}>Correção em tempo real &bull; Relatório completo &bull; </span>
+            <span key={i} className="font-black text-white uppercase mx-3" style={{ fontFamily: "var(--font-headline)", fontSize: "clamp(1.5rem, 3.5vw, 1.8rem)" }}>Correção em tempo real &bull; Relatório completo &bull; </span>
           ))}
         </div>
       </div>
 
       {/* 5. Secao Relatório (Fundo Claro) */}
-      <section className="py-24 md:py-32 bg-[#FDFCFB] dot-pattern relative overflow-hidden">
+      <section className="relative z-[2] py-24 md:py-32 bg-[#FDFCFB] dot-pattern overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10">
           <div className="text-center mb-16">
             <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-black/15 bg-black/5 text-black font-extrabold uppercase tracking-[0.15em] text-xs" style={{ fontFamily: "var(--font-headline)" }}>
@@ -395,7 +404,7 @@ export default function Home() {
             <p className="text-black font-bold text-sm sm:text-base md:text-lg px-4 sm:px-0" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>Você já viu algum professor passando todas essas informações tão específicas?</p>
             <a
               href="#precos"
-              className="cta-btn cta-green rounded-full py-3.5 px-8 sm:py-4 sm:px-12 text-lg sm:text-xl font-bold uppercase cursor-pointer"
+              className="cta-btn cta-green rounded-full py-3.5 px-8 sm:py-4 sm:px-12 text-4xl sm:text-xl font-bold uppercase cursor-pointer"
               style={{ fontFamily: "var(--font-headline)" }}
             >
               QUERO O TUTOR DFN
@@ -403,18 +412,19 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </div>{/* Fim wrapper sticky OqueE→Relatorio */}
 
       {/* Ticker: Relatório → Modos de Pratica */}
       <div className="bg-[#FF4500] ticker-wrap" style={{ paddingTop: "5px", paddingBottom: "5px" }}>
         <div className="ticker-move">
           {Array.from({ length: 8 }).map((_, i) => (
-            <span key={i} className="font-black text-white uppercase mx-3" style={{ fontFamily: "var(--font-headline)", fontSize: "clamp(0.95rem, 2.3vw, 1.58rem)" }}>Street Talk &bull; Devotional &bull; Boardroom &bull; </span>
+            <span key={i} className="font-black text-white uppercase mx-3" style={{ fontFamily: "var(--font-headline)", fontSize: "clamp(1.5rem, 3.5vw, 1.8rem)" }}>Street Talk &bull; Devotional &bull; Boardroom &bull; </span>
           ))}
         </div>
       </div>
 
       {/* 6. Secao Modos de Pratica (Fundo Claro) */}
-      <section className="bg-[#FDFCFB] dot-pattern pt-10 pb-6 md:pt-24 md:pb-24 overflow-hidden relative">
+      <section className="relative z-[2] bg-[#FDFCFB] dot-pattern pt-10 pb-6 md:pt-24 md:pb-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10">
           <h2 className="font-extrabold text-black tracking-normal mb-8 sm:mb-16 text-center md:text-left md:whitespace-nowrap" style={{ fontFamily: "var(--font-headline)", fontSize: "clamp(1.4rem, 5vw, 3.5rem)" }}>
             PRATIQUE O INGLÊS QUE<br className="sm:hidden" /> VOCÊ VAI <span className="bg-[#FF4500] text-white px-2 py-0.5 sm:px-3 sm:py-1 inline-block mt-1 sm:mt-0">REALMENTE USAR</span>
@@ -444,9 +454,10 @@ export default function Home() {
           </div>
 
           {/* === DESKTOP: efeito carta descendo no hover === */}
-          <div className="hidden md:grid md:grid-cols-3 gap-8">
+          <div className="hidden md:grid md:grid-cols-3 gap-8 cards-focus-group">
             {/* Street Talk */}
-            <div className="rounded-2xl group relative overflow-visible cursor-pointer" style={{ height: "500px" }}>
+            <AnimateOnScroll delay={0}>
+            <div className="rounded-2xl group relative overflow-visible cursor-pointer hover:scale-110 hover:-translate-y-6 hover:z-10" style={{ height: "500px", transition: "transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.5s ease, z-index 0s" }}>
               <div className="absolute inset-0 z-[1] rounded-2xl flex flex-col items-center text-center px-8 pt-10" style={{ background: "linear-gradient(180deg, #FF4500 0%, #CC3700 100%)" }}>
                 <div className="mb-3 text-white">
                   <MessageCircle size={28} />
@@ -461,8 +472,10 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            </AnimateOnScroll>
             {/* Devotional */}
-            <div className="rounded-2xl group relative overflow-visible cursor-pointer" style={{ height: "500px" }}>
+            <AnimateOnScroll delay={1}>
+            <div className="rounded-2xl group relative overflow-visible cursor-pointer hover:scale-110 hover:-translate-y-6 hover:z-10" style={{ height: "500px", transition: "transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.5s ease, z-index 0s" }}>
               <div className="absolute inset-0 z-[1] rounded-2xl flex flex-col items-center text-center px-8 pt-10" style={{ background: "linear-gradient(180deg, #FF4500 0%, #CC3700 100%)" }}>
                 <div className="mb-3 text-white">
                   <BookOpen size={28} />
@@ -477,8 +490,10 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            </AnimateOnScroll>
             {/* Boardroom */}
-            <div className="rounded-2xl group relative overflow-visible cursor-pointer" style={{ height: "500px" }}>
+            <AnimateOnScroll delay={2}>
+            <div className="rounded-2xl group relative overflow-visible cursor-pointer hover:scale-110 hover:-translate-y-6 hover:z-10" style={{ height: "500px", transition: "transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.5s ease, z-index 0s" }}>
               <div className="absolute inset-0 z-[1] rounded-2xl flex flex-col items-center text-center px-8 pt-10" style={{ background: "linear-gradient(180deg, #FF4500 0%, #CC3700 100%)" }}>
                 <div className="mb-3 text-white">
                   <Briefcase size={28} />
@@ -493,6 +508,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            </AnimateOnScroll>
           </div>
         </div>
       </section>
@@ -602,33 +618,13 @@ export default function Home() {
             NÃO É O QUE A GENTE DIZ.<br /><span className="text-[#FF4500]">É O QUE ELES VIVERAM.</span>
           </h2>
 
-          {/* Mobile: carrossel autoplay */}
           <TestimonialsCarousel />
-
-          {/* Desktop: grid */}
-          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { text: "O Tutor DFN me deu a confiança que faltava para pregar em uma conferência na África do Sul. A IA entende os termos bíblicos melhor que qualquer professor que já tive.", name: "Pr. Ricardo Silva", role: "Missão Global", initials: "RS" },
-              { text: "Estudar inglês sempre foi um peso, mas com os cenários de Boardroom eu finalmente consegui me comunicar com parceiros internacionais do meu ministério.", name: "Ana Luiza Mello", role: "Coordenadora de Projetos", initials: "AM" },
-              { text: "Uso o Street Talk todos os dias antes de sair para o campo. É como ter um amigo nativo te dando dicas reais de como as pessoas falam na rua.", name: "Gabriel Santos", role: "Missionário de Campo", initials: "GS" },
-            ].map((t, i) => (
-              <div key={i} className="bg-white p-8 rounded-2xl flex flex-col justify-between shadow-sm border border-black/5" style={{ borderLeft: "4px solid #FF4500" }}>
-                <p className="text-black/70 italic mb-8" style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>&quot;{t.text}&quot;</p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[#FF4500]/15 flex items-center justify-center text-[#FF4500] font-bold" style={{ fontFamily: "var(--font-headline)" }}>{t.initials}</div>
-                  <div>
-                    <p className="font-bold text-black" style={{ fontFamily: "var(--font-body)" }}>{t.name}</p>
-                    <p className="text-xs text-[#FF4500] font-bold uppercase tracking-widest" style={{ fontFamily: "var(--font-label)" }}>{t.role}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
       {/* 10. Oferta/Pricing (Fundo Claro) */}
-      <section className="bg-[#FDFCFB] dot-pattern py-16 md:py-24 relative overflow-hidden">
+      <div className="relative">
+      <StickySection zIndex={1} as="section" className="bg-[#FDFCFB] dot-pattern py-16 md:py-24 relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-6 sm:px-8 md:px-12">
           <div className="flex flex-col lg:flex-row gap-8 md:gap-16 items-center">
             <div className="lg:w-1/2 px-2 sm:px-0">
@@ -695,19 +691,19 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </StickySection>
 
       {/* Ticker: Pricing → Garantia+FAQ */}
-      <div className="bg-[#FF4500] ticker-wrap" style={{ paddingTop: "5px", paddingBottom: "5px" }}>
+      <div className="relative z-[2] bg-[#FF4500] ticker-wrap" style={{ paddingTop: "5px", paddingBottom: "5px" }}>
         <div className="ticker-move">
           {Array.from({ length: 8 }).map((_, i) => (
-            <span key={i} className="font-black text-white uppercase mx-3" style={{ fontFamily: "var(--font-headline)", fontSize: "clamp(0.95rem, 2.3vw, 1.58rem)" }}><span className="text-[#FF4500]">7 dias</span> de garantia &bull; Sem risco &bull; 100% do seu dinheiro de volta &bull;</span>
+            <span key={i} className="font-black text-white uppercase mx-3" style={{ fontFamily: "var(--font-headline)", fontSize: "clamp(1.5rem, 3.5vw, 1.8rem)" }}><span className="text-[#FF4500]">7 dias</span> de garantia &bull; Sem risco &bull; 100% do seu dinheiro de volta &bull;</span>
           ))}
         </div>
       </div>
 
       {/* 11. Garantia e FAQ (Fundo Escuro) */}
-      <section className="relative bg-black py-24 text-white overflow-hidden">
+      <section className="relative z-[2] bg-black py-24 text-white overflow-hidden">
         <div className="orange-glow" aria-hidden="true" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
           <h2 className="font-extrabold text-3xl md:text-4xl mb-12 text-center" style={{ fontFamily: "var(--font-headline)" }}>SE VOCÊ AINDA TEM ALGUMA DÚVIDA</h2>
@@ -743,21 +739,22 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </div>{/* Fim wrapper sticky Pricing→FAQ */}
 
       {/* Footer */}
       <footer className="bg-black w-full py-8 sm:py-12 px-4 sm:px-6 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6 max-w-7xl mx-auto">
-          <div className="flex items-center gap-3">
-            <Image src="/logo-tutor-dfn.png" alt="Tutor DFN" width={60} height={20} className="h-5 w-auto" />
-            <Image src="/logo-dfn.png" alt="Destra For The Nations" width={60} height={20} className="h-5 w-auto" />
+          <div className="text-sm text-white/50 text-center md:text-left" style={{ fontFamily: "var(--font-body)" }}>
+            &copy; 2026 Destra For The Nations. Todos os direitos reservados.
           </div>
           <div className="flex flex-wrap justify-center gap-4 sm:gap-8">
             <a href="#" className="text-sm text-white/50 hover:text-white transition-colors" style={{ fontFamily: "var(--font-body)" }}>Termos de Uso</a>
             <a href="#" className="text-sm text-white/50 hover:text-white transition-colors" style={{ fontFamily: "var(--font-body)" }}>Política de Privacidade</a>
             <a href="#" className="text-sm text-white/50 hover:text-[#2DD4A0] transition-colors" style={{ fontFamily: "var(--font-body)" }}>Suporte WhatsApp</a>
           </div>
-          <div className="text-sm text-white/50 text-center md:text-right" style={{ fontFamily: "var(--font-body)" }}>
-            &copy; 2026 Destra For The Nations. Todos os direitos reservados.
+          <div className="flex items-center gap-3">
+            <Image src="/logo-tutor-dfn.png" alt="Tutor DFN" width={60} height={20} className="h-5 w-auto" />
+            <Image src="/logo-dfn.png" alt="Destra For The Nations" width={60} height={20} className="h-5 w-auto" />
           </div>
         </div>
       </footer>

@@ -29,7 +29,7 @@ function Card({ t, compact = false }: { t: typeof testimonials[0]; compact?: boo
   return (
     <>
       <p
-        className="text-black/70 italic text-[13px] mb-3"
+        className="text-black/70 italic text-[13px] md:text-base mb-3 md:mb-8"
         style={{
           fontFamily: "var(--font-body)",
           lineHeight: "1.4",
@@ -43,16 +43,16 @@ function Card({ t, compact = false }: { t: typeof testimonials[0]; compact?: boo
       </p>
       <div className="flex items-center gap-3">
         <div
-          className="w-9 h-9 rounded-full bg-[#FF4500]/15 flex items-center justify-center text-[#FF4500] font-bold text-xs shrink-0"
+          className="w-9 h-9 md:w-12 md:h-12 rounded-full bg-[#FF4500]/15 flex items-center justify-center text-[#FF4500] font-bold text-xs md:text-sm shrink-0"
           style={{ fontFamily: "var(--font-headline)" }}
         >
           {t.initials}
         </div>
         <div>
-          <p className="font-bold text-black text-[13px]" style={{ fontFamily: "var(--font-body)" }}>
+          <p className="font-bold text-black text-[13px] md:text-base" style={{ fontFamily: "var(--font-body)" }}>
             {t.name}
           </p>
-          <p className="text-[9px] text-[#FF4500] font-bold uppercase tracking-widest" style={{ fontFamily: "var(--font-label)" }}>
+          <p className="text-[9px] md:text-xs text-[#FF4500] font-bold uppercase tracking-widest" style={{ fontFamily: "var(--font-label)" }}>
             {t.role}
           </p>
         </div>
@@ -81,7 +81,7 @@ export default function TestimonialsCarousel() {
   }, []);
 
   return (
-    <div className="md:hidden overflow-hidden -mx-4 relative">
+    <div className="overflow-hidden -mx-4 relative">
       <div
         className="flex gap-4 px-4 testimonials-scroll"
         style={{ animationPlayState: isPaused ? "paused" : "running" }}
@@ -91,11 +91,11 @@ export default function TestimonialsCarousel() {
             key={i}
             ref={(el) => { cardRefs.current[i] = el; }}
             onClick={() => handleClick(i, cardRefs.current[i])}
-            className="shrink-0 rounded-xl border border-black/5 bg-white flex flex-col justify-between cursor-pointer"
+            className="shrink-0 rounded-xl md:rounded-2xl border border-black/5 bg-white flex flex-col justify-between cursor-pointer"
             style={{
               borderLeft: "3px solid #FF4500",
-              width: "65vw",
-              padding: "16px 18px",
+              width: "clamp(260px, 65vw, calc(33.333vw - 2rem))",
+              padding: "clamp(16px, 2vw, 32px) clamp(18px, 2vw, 32px)",
               boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
             }}
           >
