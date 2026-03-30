@@ -54,11 +54,10 @@ export default function Home() {
             </p>
             <a
               href="#precos"
-              className="cta-btn cta-green rounded-full py-3.5 px-8 sm:py-4 sm:px-12 text-lg sm:text-xl font-bold uppercase cursor-pointer"
+              className="cta-btn cta-green block w-full max-w-xs sm:max-w-sm text-center py-4 rounded-xl font-bold text-lg sm:text-xl uppercase cursor-pointer"
               style={{ fontFamily: "var(--font-headline)" }}
             >
               QUERO O TUTOR DFN
-              <ArrowRight size={20} />
             </a>
             <div className="text-black/30 font-bold text-xs uppercase tracking-widest" style={{ fontFamily: "var(--font-headline)" }}>
               Aprenda Inglês IA
