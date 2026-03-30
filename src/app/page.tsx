@@ -160,7 +160,7 @@ export default function Home() {
 
         {/* Texto transição + CTA — centralizado abaixo dos blocos */}
         <div className="flex flex-col items-center text-center mt-12" style={{ gap: "20px" }}>
-          <p className="text-white md:text-[#FF4500] font-bold text-base sm:text-lg uppercase tracking-wider" style={{ fontFamily: "var(--font-headline)" }}>
+          <p className="text-white font-bold text-base sm:text-lg uppercase tracking-wider" style={{ fontFamily: "var(--font-headline)" }}>
             O Tutor DFN resolve todos esses problemas
           </p>
           <a
