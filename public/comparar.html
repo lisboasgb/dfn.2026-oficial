@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#FF5722",
+              "surface": "#f9f9f9",
+              "on-surface": "#1a1c1c",
+              "on-surface-variant": "#5b4039",
+              "surface-container-highest": "#e2e2e2",
+              "primary-light": "#FFF5F2"
+            },
+            fontFamily: {
+              "manrope": ["Manrope", "sans-serif"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #f9f9f9;
+            background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="font-manrope text-on-surface antialiased min-h-screen flex items-center justify-center p-4">
+<!-- Comparison Table Component -->
+<div class="w-full max-w-5xl bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<thead>
+<tr class="border-b border-gray-100">
+<th class="py-8 px-6 text-left text-xs font-extrabold text-gray-500 uppercase tracking-widest bg-gray-50/50">Critério</th>
+<th class="py-8 px-6 text-center text-xs font-extrabold text-gray-500 uppercase tracking-widest bg-gray-50/50">Escolas Tradicionais</th>
+<th class="py-8 px-6 text-center text-xs font-extrabold text-gray-500 uppercase tracking-widest bg-gray-50/50">Apps de Inglês</th>
+<th class="py-8 px-6 text-center text-xs font-extrabold text-primary uppercase tracking-widest bg-primary-light/50">Tutor DFN</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-50">
+<!-- Row 1 -->
+<tr>
+<td class="py-6 px-6 text-sm font-extrabold text-on-surface uppercase w-1/4">Método de Prática</td>
+<td class="py-6 px-6 text-center text-gray-500 text-sm leading-relaxed w-1/4">Aulas teóricas com foco em gramática</td>
+<td class="py-6 px-6 text-center text-gray-500 text-sm leading-relaxed w-1/4">Flashcards e exercícios repetitivos</td>
+<td class="py-6 px-6 text-center text-primary font-bold text-sm leading-relaxed bg-primary-light/30 w-1/4">Método 12:2 com conversação real em inglês desde o Dia 1</td>
+</tr>
+<!-- Row 2 -->
+<tr>
+<td class="py-6 px-6 text-sm font-extrabold text-on-surface uppercase">Correção de Erros</td>
+<td class="py-6 px-6 text-center text-gray-500 text-sm leading-relaxed">Feedback pontual no fim da aula (se sobrar tempo)</td>
+<td class="py-6 px-6 text-center text-gray-500 text-sm leading-relaxed">Sem correção personalizada</td>
+<td class="py-6 px-6 text-center text-primary font-bold text-sm leading-relaxed bg-primary-light/30">Correção imediata a cada palavra em texto ou áudio</td>
+</tr>
+<!-- Row 3 -->
+<tr>
+<td class="py-6 px-6 text-sm font-extrabold text-on-surface uppercase">Disponibilidade</td>
+<td class="py-6 px-6 text-center text-gray-500 text-sm leading-relaxed">Limitada ao horário da aula</td>
+<td class="py-6 px-6 text-center text-gray-500 text-sm leading-relaxed">A qualquer hora, mas sem interação real</td>
+<td class="py-6 px-6 text-center text-primary font-bold text-sm leading-relaxed bg-primary-light/30">24 horas por dia, direto no WhatsApp</td>
+</tr>
+<!-- Row 4 -->
+<tr>
+<td class="py-6 px-6 text-sm font-extrabold text-on-surface uppercase">Tempo Necessário por Dia</td>
+<td class="py-6 px-6 text-center text-gray-500 text-sm leading-relaxed">1h a 2h</td>
+<td class="py-6 px-6 text-center text-gray-500 text-sm leading-relaxed">30 minutos</td>
+<td class="py-6 px-6 text-center text-primary font-bold text-sm leading-relaxed bg-primary-light/30">15 minutos já é suficiente</td>
+</tr>
+<!-- Row 5 -->
+<tr>
+<td class="py-6 px-6 text-sm font-extrabold text-on-surface uppercase">Relatório de Progresso</td>
+<td class="py-6 px-6 text-center text-gray-500 text-sm leading-relaxed">Nenhum</td>
+<td class="py-6 px-6 text-center text-gray-500 text-sm leading-relaxed">Nenhum</td>
+<td class="py-6 px-6 text-center text-primary font-bold text-sm leading-relaxed bg-primary-light/30">Relatório completo ao fim de cada sessão: o que parar, continuar e começar</td>
+</tr>
+<!-- Row 6 -->
+<tr>
+<td class="py-6 px-6 text-sm font-extrabold text-on-surface uppercase">Imersão no Inglês</td>
+<td class="py-6 px-6 text-center text-gray-500 text-sm leading-relaxed">Muita teoria, pouca prática</td>
+<td class="py-6 px-6 text-center text-gray-500 text-sm leading-relaxed">Sem contexto real de conversação</td>
+<td class="py-6 px-6 text-center text-primary font-bold text-sm leading-relaxed bg-primary-light/30">Prática 100% interativa focada nas situações da sua vida</td>
+</tr>
+<!-- Row 7 -->
+<tr>
+<td class="py-6 px-6 text-sm font-extrabold text-on-surface uppercase">Propósito do Aprendizado</td>
+<td class="py-6 px-6 text-center text-gray-500 text-sm leading-relaxed">Inglês genérico</td>
+<td class="py-6 px-6 text-center text-gray-500 text-sm leading-relaxed">Inglês genérico</td>
+<td class="py-6 px-6 text-center text-primary font-bold text-sm leading-relaxed bg-primary-light/30">Inglês conectado ao seu Chamado</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</body></html>

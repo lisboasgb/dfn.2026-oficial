@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tutor DFN - Savings Component</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#FF5722", // Bright orange accent from screenshot
+              "background-light": "#F8F9FA",
+              "background-dark": "#0A0A0A",
+            },
+            fontFamily: {
+              display: ["Manrope", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "12px",
+            },
+          },
+        },
+      };
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #0A0A0A;background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #0a0a0a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        .accent-line {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #FF5722;
+            box-shadow: 0 0 15px rgba(255, 87, 34, 0.4);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark">
+<div class="glass-card max-w-2xl w-full p-8 md:p-10 rounded-2xl relative transition-all hover:scale-[1.01] duration-300">
+<div class="accent-line"></div>
+<div class="space-y-6">
+<p class="text-slate-300 dark:text-slate-400 text-lg md:text-xl font-medium leading-relaxed">
+                Um professor particular de inglês cobra em média <span class="text-white font-semibold">R$100</span> a hora de aula.
+            </p>
+<div class="space-y-2">
+<p class="text-slate-400 dark:text-slate-500 text-base md:text-lg">
+                    Para ter o mesmo nível de prática e correção do <span class="text-slate-200">Tutor DFN</span> por 1 ano...
+                </p>
+<p class="text-white text-2xl md:text-3xl font-extrabold tracking-tight text-glow">
+                    Você gastaria facilmente mais de <span class="text-primary">R$ 30.000</span>
+</p>
+</div>
+<div class="h-px w-full bg-gradient-to-r from-white/10 to-transparent"></div>
+<div class="space-y-3">
+<p class="text-slate-200 dark:text-slate-300 text-lg font-semibold flex items-center gap-2">
+                    Com o Tutor DFN, tudo se torna mais fácil e acessível.
+                </p>
+<p class="text-slate-400 dark:text-slate-500 text-sm md:text-base italic">
+                    Sendo que está sempre disponível... Pelo tempo que precisar, na hora que quiser.
+                </p>
+</div>
+</div>
+<div class="absolute -bottom-10 -right-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+</div>
+
+</body></html>

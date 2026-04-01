@@ -202,15 +202,6 @@ export default function PhoneMockup({ children, className = "", images }: PhoneM
             <ChevronRight size={20} />
           </button>
 
-          <div className="flex justify-center gap-2 mt-4">
-            {images.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrentSlide(i)}
-                className={`w-2.5 h-2.5 rounded-full transition-all ${i === currentSlide ? "bg-[#FF4500] scale-110" : "bg-black/20"}`}
-              />
-            ))}
-          </div>
         </>
       )}
     </div>

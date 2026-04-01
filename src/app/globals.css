@@ -282,6 +282,12 @@ section[class*="bg-black"] + section[class*="bg-black"] {
   box-shadow: 0 0 15px rgba(255, 69, 0, 0.4), 0 4px 16px rgba(255, 69, 0, 0.3);
 }
 
+.cta-green-map:hover {
+  background: #FFFFFF !important;
+  color: #FF4500 !important;
+  box-shadow: 0 0 30px rgba(255,255,255,0.3), 0 12px 32px rgba(0,0,0,0.2) !important;
+}
+
 /* ===== LARANJA — seções com fundo escuro ===== */
 .cta-orange {
   background: #FF4500;
@@ -538,7 +544,7 @@ body::-webkit-scrollbar-thumb:active {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+  transition: max-height 0.18s ease-out, opacity 0.15s ease-out, padding 0.18s ease-out;
 }
 .faq-item[data-open="true"] .faq-content {
   max-height: 300px;

@@ -13,7 +13,7 @@ export function FAQItem({ question, children }: FAQItemProps) {
 
   return (
     <div
-      className="faq-item glass-card rounded-xl overflow-hidden"
+      className="faq-item glass-card rounded-xl overflow-hidden !p-0"
       data-open={open}
       onMouseEnter={() => {
         if (window.innerWidth >= 768) setOpen(true);
@@ -23,14 +23,14 @@ export function FAQItem({ question, children }: FAQItemProps) {
       }}
     >
       <button
-        className="w-full p-4 sm:p-6 font-bold text-sm sm:text-base cursor-pointer flex justify-between items-center text-left"
+        className="w-full py-3 sm:py-4 px-6 sm:px-8 font-bold text-sm sm:text-base cursor-pointer flex justify-between items-center text-left"
         style={{ fontFamily: "var(--font-body)" }}
         onClick={() => setOpen(!open)}
       >
         {question}
-        <ChevronDown className={`shrink-0 ml-2 transition-transform duration-300 ${open ? "rotate-180" : ""}`} size={20} />
+        <ChevronDown className={`shrink-0 ml-2 transition-transform duration-150 ${open ? "rotate-180" : ""}`} size={18} />
       </button>
-      <div className={`faq-content px-4 sm:px-6 text-white/60 text-sm sm:text-base ${open ? "!max-h-[300px] !opacity-100 pb-4 sm:pb-6" : ""}`} style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>
+      <div className={`faq-content px-6 sm:px-8 text-white/60 text-sm sm:text-base ${open ? "!max-h-[300px] !opacity-100 pb-4 sm:pb-5" : ""}`} style={{ fontFamily: "var(--font-body)", lineHeight: "1.4" }}>
         {children}
       </div>
     </div>
